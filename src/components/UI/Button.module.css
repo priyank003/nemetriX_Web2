@@ -1,0 +1,9 @@
+@import "./constant/vars.css";
+
+.btn {
+  border: 2px solid var(--color-primary);
+  background: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}

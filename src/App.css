@@ -1,5 +1,7 @@
+@import "./components/UI/constant/vars.css";
 .App {
-  text-align: center;
+  width: 85%;
+  margin: auto;
 }
 
 .App-logo {
@@ -35,4 +37,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(235, 226, 226);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
 }

@@ -1,0 +1,99 @@
+@import "../../UI/constant/vars.css";
+.landing {
+  position: relative;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  font-family: var(--font-primary);
+  color: var(--color-primary-font);
+}
+.img-green-curve {
+  width: 80%;
+  position: absolute;
+  z-index: -1000;
+  top: -5rem;
+  right: -5rem;
+}
+.landing-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.landing-heading h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  margin-top: 5rem;
+}
+.landing-heading h1 {
+  margin-top: 1rem;
+  font-size: 4.5rem;
+  font-weight: bolder;
+  line-height: 5rem;
+  margin-bottom: 0;
+}
+.landing-desc p {
+  margin-top: 2rem;
+  color: var(--color-primary-font-lite);
+  font-size: 1.2rem;
+}
+.landing-right {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons-wrap {
+  position: relative;
+}
+.img-Resume,
+.img-Id,
+.img-RedChat,
+.img-YellowChat {
+  position: absolute;
+  z-index: 100;
+  width: 100px;
+}
+.img-Resume {
+  top: 23rem;
+  left: 8rem;
+  box-shadow: 0 0 10px rgb(190, 181, 181);
+  border-radius: 10px;
+}
+.img-RedChat {
+  top: 2rem;
+  left: 6rem;
+}
+.img-YellowChat {
+  left: 22rem;
+  top: -0.5rem;
+}
+.img-Id {
+  top: 15rem;
+  right: 5rem;
+  width: 150px;
+}
+.img-wrap {
+  margin-left: 7rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgCollege {
+  width: 600px;
+
+  clip-path: circle(40.1% at 38% 49%);
+}
+.link-btn {
+  margin-top: 2rem;
+
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  font-family: var(--font-primary);
+  background: var(--color-secondary);
+}

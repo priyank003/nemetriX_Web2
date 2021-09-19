@@ -1,0 +1,55 @@
+@import "../../UI/constant/vars.css";
+.header {
+  margin-top: 10px;
+  font-family: var(--font-primary);
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-container {
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Glory&family=Josefin+Sans&display=swap");
+
+.header-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-brand h1 {
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--color-primary-font);
+}
+.header-brand img {
+  width: 70px;
+}
+
+.auth-login {
+  border-radius: 10px;
+  border: 2px solid var(--color-primary-lite);
+
+  font-size: 0.8rem;
+  padding: 10px;
+
+  background: none;
+  color: var(--color-primary);
+  width: 90px;
+  cursor: pointer;
+}
+
+.auth-signup {
+  background: var(--color-primary);
+  color: white;
+  width: 90px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--color-primary);
+  margin-left: 2rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}

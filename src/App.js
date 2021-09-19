@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/pages/home/Header";
+import Landing from "./components/pages/home/Landing";
+import Signup from "./components/pages/auth/Signup";
+import Login from "./components/pages/auth/Login";
+import { useState } from "react";
 
 function App() {
+  const [showSignup, setShowSignup] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
+  const signupHandler = (bool) => {
+    bool ? setShowSignup(bool) : setShowSignup(false);
+  };
+
+  const loginHandler = (bool) => {
+    bool ? setShowLogin(bool) : setShowLogin(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header onSignup={signupHandler} onLogin={loginHandler} />
+
+      {showSignup ? (
+        <Signup hideSignup={signupHandler} />
+      ) : showLogin ? (
+        <Login hideLogin={loginHandler} />
+      ) : (
+        <Landing />
+      )}
     </div>
   );
 }
