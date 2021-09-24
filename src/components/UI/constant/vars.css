@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Glory&family=Josefin+Sans&family=Poppins&display=swap");
 :root {
+  --color-primary-dark: #61c15c;
   --color-primary: #80c47f;
   --color-secondary: #fe7649;
   --color-primary-lite: #b7eeb5;
   --color-primary-font: #3f475b;
   --color-primary-font-lite: #898c94;
+  --color-primary-bg: #eff3f8;
 
   --font-primary: "Poppins", sans-serif;
 }
