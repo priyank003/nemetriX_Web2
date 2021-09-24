@@ -3,6 +3,7 @@ import { useState } from "react";
 import classes from "./Header.module.css";
 import AIT from "../../../assets/logos/AIT black logo.png";
 import Signup from "../auth/Signup";
+import { Link } from "react-router-dom";
 const Header = (props) => {
   const signupHandler = () => {
     props.onSignup(true);
@@ -24,12 +25,19 @@ const Header = (props) => {
           </div> */}
 
           <div className={classes["nav-auth"]}>
-            <button className={classes["auth-login"]} onClick={loginHandler}>
-              LOG-IN
-            </button>
-            <button className={classes["auth-signup"]} onClick={signupHandler}>
-              SIGN-UP
-            </button>
+            <Link to="/login">
+              <button className={classes["auth-login"]} onClick={loginHandler}>
+                LOG-IN
+              </button>
+            </Link>
+            <Link to="/signup">
+              <button
+                className={classes["auth-signup"]}
+                onClick={signupHandler}
+              >
+                SIGN-UP
+              </button>
+            </Link>
           </div>
         </div>
       </div>

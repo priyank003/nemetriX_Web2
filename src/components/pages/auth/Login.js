@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Login.module.css";
 
 import Card from "../../UI/Card";
-
+import { Link } from "react-router-dom";
 const Login = (props) => {
   const btnClickHandler = (e) => {
     e.preventDefault();
@@ -38,7 +38,9 @@ const Login = (props) => {
                   </label>
                 </div>
                 <div className={classes["form-submit"]}>
-                  <button onClick={btnClickHandler}>Log-in</button>
+                  <Link to="/dashboard">
+                    <button onClick={btnClickHandler}>Log-in</button>
+                  </Link>
                 </div>
                 <div className={classes["forgot-password"]}>
                   <p>Forgot your password ?</p>
