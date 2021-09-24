@@ -23,6 +23,14 @@ const Signup = (props) => {
     reset: resetEmailInput,
   } = useInput((value) => value.trim().includes("@"));
 
+  const {
+    value: enteredId,
+    isValid: enteredIdIsValid,
+    hasEror: idInputHasEror,
+    valueChangeHandler: idChangeHandler,
+    inputBlurHandler: idBlurHandler,
+    reset: resetIdInput,
+  } = useInput((value) => value.trim() !== "");
   let formIsValid = false;
 
   if (enteredNameIsValid) {
@@ -73,9 +81,35 @@ const Signup = (props) => {
                   <p className={classes["eror-text"]}>Name must not be empty</p>
                 )}
                 <div className={classes["input-cedentials"]}>
-                  <input type="email" placeholder="AIT email" />
-                  <input type="text" placeholder="Registered id" />
+                  <input
+                    type="email"
+                    placeholder="AIT email"
+                    onChange={emailChangeHandler}
+                    value={enteredEmail}
+                    className={
+                      classes[`${emailInputHasEror ? "input-invalid" : ""}`]
+                    }
+                    onBlur={emailBlurHandler}
+                  />
+
+                  <input
+                    type="text"
+                    placeholder="Registered id"
+                    onChange={idChangeHandler}
+                    value={enteredId}
+                    className={
+                      classes[`${idInputHasEror ? "input-invalid" : ""}`]
+                    }
+                    onBlur={idBlurHandler}
+                  />
                 </div>
+                {emailInputHasEror && (
+                  <p className={classes["eror-text"]}>email must include @</p>
+                )}
+                {idInputHasEror && (
+                  <p className={classes["eror-text"]}>id must not be empty</p>
+                )}
+
                 <div className={classes["input-study"]}>
                   <label htmlFor="">
                     <span>Year</span>

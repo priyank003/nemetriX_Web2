@@ -120,9 +120,10 @@ select {
   color: white;
 }
 .eror-text {
+  font-size: 0.8rem;
   color: red;
 }
 .input-invalid {
-  background: rgba(228, 146, 146, 0.493);
+  background: rgba(211, 171, 171, 0.493);
   border: 1px solid red;
 }
