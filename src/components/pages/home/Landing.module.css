@@ -1,13 +1,16 @@
 @import "../../UI/constant/vars.css";
 .landing {
   position: relative;
-  height: 80vh;
+
   margin: auto;
-  display: flex;
-  justify-content: space-between;
 
   font-family: var(--font-primary);
   color: var(--color-primary-font);
+}
+.landing-container {
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
 }
 .img-green-curve {
   width: 80%;
@@ -96,4 +99,25 @@
   padding: 10px 20px;
   font-family: var(--font-primary);
   background: var(--color-secondary);
+}
+.landing-placements {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.company-icon {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-wrap img {
+  width: 200px;
 }
