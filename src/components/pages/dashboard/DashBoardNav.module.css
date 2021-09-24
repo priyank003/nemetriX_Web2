@@ -1,0 +1,47 @@
+.dashBoardNav {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  padding-top: 20px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Glory&family=Josefin+Sans&display=swap");
+
+.dashboard-nav-header {
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--color-primary-font);
+  display: flex;
+  align-items: flex-end;
+}
+.dashboard-nav-header img {
+  width: 60px;
+}
+.dashboard-nav-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  margin-left: 5px;
+}
+.dashboard-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.nav-link {
+  background: var(--color-primary-dark);
+  margin-top: 1.5rem;
+  width: 200px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.nav-link a {
+  color: white;
+}
+
+.nav-bottom {
+  margin-top: 4rem;
+}
+.dashboard-nav-img img {
+  width: 200px;
+}

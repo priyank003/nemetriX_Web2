@@ -1,0 +1,12 @@
+.calendar {
+  width: 300px;
+}
+
+.react-calendar {
+  border-radius: 25px;
+  padding: 10px;
+  border: none;
+}
+.react-calendar abbr {
+  text-decoration: none;
+}

@@ -1,0 +1,235 @@
+@import "../../UI/constant/vars.css";
+.dashboard {
+  border-radius: 25px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  font-family: var(--font-primary);
+  box-shadow: 0.7px 0.3px 5px rgba(0, 0, 0, 0.008),
+    1.7px 0.7px 11.9px rgba(0, 0, 0, 0.012),
+    3.3px 1.3px 22.4px rgba(0, 0, 0, 0.015),
+    5.8px 2.2px 40px rgba(0, 0, 0, 0.018),
+    10.9px 4.2px 74.8px rgba(0, 0, 0, 0.022),
+    26px 10px 179px rgba(0, 0, 0, 0.03);
+  padding: 10px;
+}
+.dashboard-container {
+  /* border: 1px solid black; */
+  display: flex;
+  height: fit-content;
+
+  background: var(--color-primary-bg);
+  border-radius: 25px;
+}
+.dashboard-nav {
+  width: 30%;
+
+  border-radius: 25px;
+}
+.dashboard-nav-container {
+  margin: 10px;
+}
+.dashboard-main {
+  width: 70%;
+
+  /* border: 1px solid black; */
+  border-radius: 25px;
+}
+.dashboard-main-container {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+}
+.main-left {
+  width: 60%;
+}
+.dashboard-main-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.dashboard-search {
+  display: flex;
+  align-items: center;
+}
+.dashboard-search span {
+  font-size: 1.4rem;
+  color: var(--color-primary-font);
+  font-weight: 600;
+}
+
+.search-input {
+  margin-left: 30px;
+  display: flex;
+}
+
+.search-input input {
+  border: none;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.search-input input:focus {
+  outline: none;
+}
+.search-icon {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 0 10px;
+}
+
+.dashboard-user {
+  display: flex;
+  justify-content: space-evenly;
+  width: 35%;
+}
+.user-date {
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+}
+.user-date span {
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--color-primary-font);
+}
+.user-notifications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.user-notifications img {
+  width: 20px;
+}
+.user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-profile img {
+  width: 50px;
+  border-radius: 50%;
+}
+.user-notifications span {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  background: #f54748;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.dashboard-posts {
+  width: 100%;
+  height: 550px;
+  background: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+.dashboard-posts-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid rgb(109, 98, 98);
+}
+
+.dashboard-posts-header h3 {
+  margin: 0;
+  color: var(--color-primary-font);
+}
+.dashboard-posts-filter {
+  cursor: pointer;
+}
+.main-right {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dashboard-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.dashboard-jobs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80px;
+  background: white;
+  border-radius: 25px;
+  padding: 10px;
+}
+.dashboard-jobs h2 {
+  color: var(--color-primary-font);
+  font-size: 1.2rem;
+  /* margin-left: 15px; */
+  margin: 0;
+}
+.dashboard-job-icon {
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: var(--color-primary-lite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-job-icon img {
+  width: 35px;
+}
+.dashboard-jobs-selections {
+  display: flex;
+  background: white;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80px;
+  background: white;
+  border-radius: 25px;
+  padding: 10px;
+}
+.job-selection-icon {
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: var(--color-primary-lite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.job-selection-icon img {
+  width: 35px;
+}
+.dashboard-jobs-selections h2 {
+  color: var(--color-primary-font);
+  font-size: 1.2rem;
+  margin: 0;
+}
