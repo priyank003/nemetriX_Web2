@@ -23,22 +23,39 @@
   margin-left: 5px;
 }
 .dashboard-nav-links {
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+
+  justify-content: space-evenly;
 }
 .nav-link {
-  background: var(--color-primary-dark);
-  margin-top: 1.5rem;
   width: 200px;
   padding: 10px 20px;
   border-radius: 10px;
 }
 .nav-link a {
-  color: white;
+  font-size: 1.1rem;
+  color: rgb(107, 97, 97);
 }
+.active-link {
+  border-radius: 10px;
 
+  background: var(--color-primary-dark);
+  box-shadow: 0.1px 2.7px 2.2px rgba(0, 0, 0, 0.02),
+    0.3px 6.6px 5.3px rgba(0, 0, 0, 0.028),
+    0.6px 12.4px 10px rgba(0, 0, 0, 0.035),
+    1.1px 22.1px 17.9px rgba(0, 0, 0, 0.042),
+    2.1px 41.4px 33.4px rgba(0, 0, 0, 0.05), 5px 99px 80px rgba(0, 0, 0, 0.07);
+}
+.active-link a {
+  color: rgb(233, 227, 227);
+}
+.nav-top {
+  flex: 1;
+}
 .nav-bottom {
   margin-top: 4rem;
 }
