@@ -2,14 +2,19 @@ import classes from "./DashBoard.module.css";
 import DashBoardNav from "./DashBoardNav";
 import search from "../../../assets/logos/search_black_24dp.svg";
 import Card from "../../UI/Card";
-import filter from "../../../assets/logos/filter_list_black_24dp.svg";
-import DashBoardPost from "./DashBoardPost";
+
 import calendarIcon from "../../../assets/logos/today_black_24dp.svg";
 import bellIcon from "../../../assets/logos/bell.png";
 import userImg from "../../../assets/images/user/cheerful-curly-business-girl-wearing-glasses.jpg";
 import DashBoardCalendar from "./DashBoardCalendar";
 import rocketicon from "../../../assets/logos/rocket.svg";
 import interview from "../../../assets/logos/interview.svg";
+import DashBoardPosts from "./DashBoardPosts";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Account from "./Account";
+import Analytics from "./Analytics";
+import Companies from "./Companies";
+import DashBoardPages from "./DashBoardPages";
 const DashBoard = () => {
   return (
     <div className={classes.dashboard}>
@@ -39,33 +44,15 @@ const DashBoard = () => {
                 <span> 3 </span>
               </div>
               <div className={classes["user-profile"]}>
-                <img src={userImg} alt="" />
+                <Link to="/dashboard/account">
+                  <img src={userImg} alt="" />
+                </Link>
               </div>
             </div>
           </div>
           <div className={classes["dashboard-main-container"]}>
             <div className={classes["main-left"]}>
-              <div className={classes["dashboard-posts"]}>
-                <div className={classes["dashboard-posts-header"]}>
-                  <h3>All Notices</h3>
-
-                  <div className={classes["dashboard-posts-filter"]}>
-                    <img src={filter} alt="" />
-                  </div>
-                </div>
-
-                <div className={classes["dashboard-notices"]}>
-                  <DashBoardPost />
-                  <DashBoardPost />
-                  <DashBoardPost />
-                  <DashBoardPost />
-                  <DashBoardPost />
-                  <DashBoardPost />
-                </div>
-              </div>
-              {/* <div className={classes["dashboard-charts"]}>
-                dashboard-charts
-              </div> */}
+              <DashBoardPages />
             </div>
             <div className={classes["main-right"]}>
               <DashBoardCalendar />
@@ -85,9 +72,6 @@ const DashBoard = () => {
                   <h2>150 Selected</h2>
                 </div>
               </div>
-              {/* <div className={classes["dashboard-designs"]}>
-                dashboard-designs
-              </div> */}
             </div>
           </div>
         </div>
