@@ -5,7 +5,7 @@ import imgResume from "../../../assets/logos/resume.svg";
 import imgId from "../../../assets/logos/id.svg";
 import redChat from "../../../assets/logos/red-chat.svg";
 import yellowChat from "../../../assets/logos/yellow-chat.svg";
-
+import { Link } from "react-router-dom";
 //images
 import google from "../../../assets/logos/580b57fcd9996e24bc43c51f.png";
 import microsoft from "../../../assets/logos/Microsoft-Logo-PNG-Transparent.png";
@@ -31,7 +31,9 @@ const Landing = () => {
             </p>
           </div>
           <div className={classes["landing-links"]}>
-            <button className={classes["link-btn"]}>Get started Now</button>
+            <Link to="/signup">
+              <button className={classes["link-btn"]}>Get started Now</button>
+            </Link>{" "}
           </div>
         </div>
         <div className={classes["landing-right"]}>

@@ -99,6 +99,7 @@
   padding: 10px 20px;
   font-family: var(--font-primary);
   background: var(--color-secondary);
+  cursor: pointer;
 }
 .landing-placements {
   margin-top: 5rem;
