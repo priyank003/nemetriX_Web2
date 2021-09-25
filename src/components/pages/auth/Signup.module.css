@@ -1,6 +1,8 @@
 @import "../../UI/constant/vars.css";
 
 .signUp {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   font-family: var(--font-primary);
 
   z-index: 100;

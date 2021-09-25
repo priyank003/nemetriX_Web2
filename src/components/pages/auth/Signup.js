@@ -48,13 +48,13 @@ const Signup = (props) => {
   };
 
   //hide modal by clcik on backdrop
-  const hideModalHandler = () => {
-    props.hideSignup(false);
-  };
+  // const hideModalHandler = () => {
+  //   props.hideSignup(false);
+  // };
 
   return (
     <div className={classes.signUp}>
-      <div className="backdrop" onClick={hideModalHandler}></div>
+      {/* <div className="backdrop" onClick={hideModalHandler}></div> */}
 
       <Card>
         <div className={classes["signup-form"]}>
