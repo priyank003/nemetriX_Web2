@@ -1,0 +1,108 @@
+@import "../../UI/constant/vars.css";
+.account {
+  border-radius: 25px;
+
+  background: white;
+  height: 550px;
+  padding: 10px;
+  font-family: var(--font-primary);
+}
+.account-container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-img {
+  border-radius: 50%;
+  position: relative;
+}
+/* .user-img::before {
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: red;
+
+  top: 5rem;
+  left: 0;
+} */
+
+.user-img img {
+  width: 200px;
+  border-radius: 50%;
+  /* border-bottom: 1rem solid var(--color-primary); */
+}
+.account-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.account-header h1 {
+  font-size: 1.5rem;
+}
+.user-credentials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user-id h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.user-name h1 {
+  color: var(--color-primary-font);
+}
+.account-details {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-self: flex-start;
+  color: rgb(102, 94, 94);
+}
+.user-email {
+  margin-top: 2rem;
+}
+.user-email p {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+.user-study {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+}
+.user-study h2 {
+  font-size: 1.2rem;
+  margin-right: 20px;
+  font-weight: 500;
+}
+.account-adverstisement {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.adv-heading h1 {
+  color: #806e84;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+.adv-link a {
+  border: none;
+  background: var(--color-primary);
+  color: white;
+  font-size: 1.1rem;
+  width: fit-content;
+  height: 50px;
+  padding: 10px 20px 10px;
+  cursor: pointer;
+  border-radius: 20px;
+}
