@@ -6,7 +6,7 @@ import Signup from "./components/pages/auth/Signup";
 import Login from "./components/pages/auth/Login";
 import DashBoard from "./components/pages/dashboard/DashBoard";
 import { useState } from "react";
-import { Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   const [showSignup, setShowSignup] = useState(false);
@@ -22,29 +22,32 @@ function App() {
 
   return (
     <div className="App">
-      <Header onSignup={signupHandler} onLogin={loginHandler} />
-      <Route path="/home">
-        {/* {showSignup ? (
-          <Signup hideSignup={signupHandler} />
-        ) : showLogin ? (
-          <Login hideLogin={loginHandler} />
-        ) : (
+      <Switch>
+        <Route path="/home">
+          <Header onSignup={signupHandler} onLogin={loginHandler} />
+        </Route>
+        <Route path="/home">
           <Landing />
-        )} */}
-        <Landing />
-        <Stats />
-      </Route>
-      <Route path="/signup">
-        {" "}
-        <Signup hideSignup={signupHandler} />
-      </Route>
-      <Route path="/login">
-        {" "}
-        <Login hideLogin={loginHandler} />
-      </Route>
-      <Route path="/dashboard">
-        <DashBoard />
-      </Route>
+          <Stats />
+        </Route>
+        <Route path="/signup">
+          <Header onSignup={signupHandler} onLogin={loginHandler} />
+        </Route>
+        <Route path="/signup">
+          {" "}
+          {/* <Signup hideSignup={signupHandler} /> */}
+          <Signup />
+        </Route>
+        <Route path="/login">
+          <Header onSignup={signupHandler} onLogin={loginHandler} />
+        </Route>
+        <Route path="/login">
+          <Login /> {/* <Login hideLogin={loginHandler} /> */}
+        </Route>
+        <Route path="/dashboard">
+          <DashBoard />
+        </Route>
+      </Switch>
     </div>
   );
 }
