@@ -15,10 +15,13 @@ const Header = (props) => {
   return (
     <div className={classes.header}>
       <div className={classes["header-container"]}>
-        <div className={classes["header-brand"]}>
-          <img src={AIT} alt="" />
-          <h1>AIT Placement cell</h1>
-        </div>
+        <Link to="/home">
+          <div className={classes["header-brand"]}>
+            <img src={AIT} alt="" />
+            <h1>AIT Placement cell</h1>
+          </div>
+        </Link>
+
         <div className={classes["header-nav"]}>
           {/* <div className={classes["nav-links"]}>
             <a href="/">Home </a>
