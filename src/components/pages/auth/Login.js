@@ -8,12 +8,12 @@ const Login = (props) => {
     e.preventDefault();
   };
 
-  const clickHandler = () => {
-    props.hideLogin(false);
-  };
+  // const clickHandler = () => {
+  //   props.hideLogin(false);
+  // };
   return (
     <div className={classes.login}>
-      <div className="backdrop" onClick={clickHandler}></div>
+      {/* <div className="backdrop" onClick={clickHandler}></div> */}
 
       <Card>
         <div className={classes["login-form"]}>

@@ -6,6 +6,8 @@
   z-index: 100;
 
   width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .login-form {
   width: 100%;
