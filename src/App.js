@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/pages/home/Header";
 import Landing from "./components/pages/home/Landing";
-import Stats from "./components/pages/home/Stats";
+
 import Signup from "./components/pages/auth/Signup";
 import Login from "./components/pages/auth/Login";
 import DashBoard from "./components/pages/dashboard/DashBoard";
@@ -28,7 +28,7 @@ function App() {
           <Route path="/home">
             <Header onSignup={signupHandler} onLogin={loginHandler} />
             <Landing />
-            {/* <Stats /> */}
+
             <Highlights />
           </Route>
 
@@ -39,7 +39,7 @@ function App() {
 
           <Route path="/login">
             <Header onSignup={signupHandler} onLogin={loginHandler} />
-            <Login /> {/* <Login hideLogin={loginHandler} /> */}
+            <Login />
           </Route>
           <Route path="/dashboard">
             <DashBoard />
