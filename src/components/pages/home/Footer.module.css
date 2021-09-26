@@ -1,0 +1,71 @@
+@import "../../UI/constant/vars.css";
+
+.footer {
+  font-family: var(--font-primary);
+  height: 50vh;
+  font-size: 1rem;
+  bottom: 0;
+  left: 0;
+  display: flex;
+
+  justify-content: center;
+}
+.footer-container {
+  margin-top: 3rem;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  height: 60%;
+}
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.feedback-input {
+  display: flex;
+  height: 50px;
+  margin-top: 2rem;
+}
+.feedback-input input {
+  flex: 1;
+  border-radius: 25px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid rgb(117, 106, 106);
+  box-sizing: border-box;
+}
+.feedback-input input:focus {
+  outline: none;
+}
+.feedback-send {
+  background: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  border-radius: 25px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-sizing: border-box;
+}
+.feedback-send a {
+  color: white;
+  font-size: 1.2rem;
+}
+.address-header {
+  display: flex;
+  flex-direction: column;
+  flex: 0.8;
+}
+.clg-address {
+  margin-top: 1rem;
+}
+.admin-designation {
+  margin-top: 1rem;
+}
+.feedback-request h3,
+.clg-name,
+.admin-name {
+  margin-top: 0;
+}
