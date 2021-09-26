@@ -7,7 +7,8 @@ import Login from "./components/pages/auth/Login";
 import DashBoard from "./components/pages/dashboard/DashBoard";
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
-
+import Footer from "./components/pages/home/Footer";
+import Highlights from "./components/pages/home/Highlights";
 function App() {
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
@@ -21,33 +22,31 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Switch>
-        <Route path="/home">
-          <Header onSignup={signupHandler} onLogin={loginHandler} />
-        </Route>
-        <Route path="/home">
-          <Landing />
-          <Stats />
-        </Route>
-        <Route path="/signup">
-          <Header onSignup={signupHandler} onLogin={loginHandler} />
-        </Route>
-        <Route path="/signup">
-          {" "}
-          {/* <Signup hideSignup={signupHandler} /> */}
-          <Signup />
-        </Route>
-        <Route path="/login">
-          <Header onSignup={signupHandler} onLogin={loginHandler} />
-        </Route>
-        <Route path="/login">
-          <Login /> {/* <Login hideLogin={loginHandler} /> */}
-        </Route>
-        <Route path="/dashboard">
-          <DashBoard />
-        </Route>
-      </Switch>
+    <div>
+      <div className="App">
+        <Switch>
+          <Route path="/home">
+            <Header onSignup={signupHandler} onLogin={loginHandler} />
+            <Landing />
+            {/* <Stats /> */}
+            <Highlights />
+          </Route>
+
+          <Route path="/signup">
+            <Header onSignup={signupHandler} onLogin={loginHandler} />
+            <Signup />
+          </Route>
+
+          <Route path="/login">
+            <Header onSignup={signupHandler} onLogin={loginHandler} />
+            <Login /> {/* <Login hideLogin={loginHandler} /> */}
+          </Route>
+          <Route path="/dashboard">
+            <DashBoard />
+          </Route>
+        </Switch>
+      </div>
+      <Footer />
     </div>
   );
 }
