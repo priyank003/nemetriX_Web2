@@ -20,14 +20,13 @@ const Landing = () => {
         <div className={classes["landing-left"]}>
           <div className={classes["landing-heading"]}>
             <h3>Find your</h3>
-            <h1>
-              Permanent <br /> Remote Job
-            </h1>
+            <h1>Permanent</h1>
+            <h1> Dev Job</h1>
           </div>
           <div className={classes["landing-desc"]}>
             <p>
-              Let us Match you with top tech companeis <br /> looking to hire
-              tremote developers
+              Let us Match you with top tech companies <br /> looking to hire
+              highly skilled Developers
             </p>
           </div>
           <div className={classes["landing-links"]}>
@@ -50,6 +49,10 @@ const Landing = () => {
             <div className={classes["img-wrap"]}>
               <img src={college} alt="" className={classes.imgCollege}></img>
             </div>
+          </div>
+
+          <div className={classes["landing-right-footer-mobile"]}>
+            <h3> AIT Placement Cell initiataive ❤ </h3>
           </div>
         </div>
       </div>

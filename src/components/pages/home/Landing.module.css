@@ -1,13 +1,12 @@
 @import "../../UI/constant/vars.css";
 .landing {
   position: relative;
-
-  margin: auto;
-
+  /* border: 1px solid red; */
   font-family: var(--font-primary);
   color: var(--color-primary-font);
 }
 .landing-container {
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   height: 80vh;
@@ -121,4 +120,76 @@
 }
 .icon-wrap img {
   width: 200px;
+}
+.landing-right-footer-mobile {
+  display: none;
+}
+
+/* below 460px screen width */
+@media (max-width: 460px) {
+  .landing-container {
+    height: fit-content;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .img-green-curve {
+    width: 100%;
+    left: 0;
+    top: 0rem;
+  }
+  .imgCollege {
+  }
+  .landing-right {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    /* border: 1px solid red; */
+  }
+  .icons-wrap {
+    /* border: 1px solid red; */
+    /* transform: scale(0.8); */
+    transform: scale(0.6);
+  }
+  .img-Resume {
+  }
+  .icons-wrap img {
+  }
+
+  .landing-heading h3 {
+    text-align: center;
+    margin-top: 0;
+  }
+  .landing-left {
+    margin-top: 6rem;
+    align-items: center;
+  }
+  .landing-heading h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 0;
+  }
+  .landing-desc {
+    margin-top: 1rem;
+  }
+  .landing-desc p {
+    text-align: center;
+  }
+  .landing-placements h1 {
+    text-align: center;
+  }
+  .company-icon {
+    flex-wrap: wrap;
+  }
+  .icon-wrap {
+    width: 250px;
+    height: 100px;
+    margin-bottom: 2rem;
+  }
+  .landing-right-footer-mobile {
+    display: block;
+  }
+  .landing-right-footer-mobile h1 {
+  }
 }
