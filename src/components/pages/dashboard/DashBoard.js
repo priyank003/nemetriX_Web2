@@ -1,21 +1,15 @@
 import classes from "./DashBoard.module.css";
 import DashBoardNav from "./DashBoardNav";
 import search from "../../../assets/logos/search_black_24dp.svg";
-import Card from "../../UI/Card";
-
 import calendarIcon from "../../../assets/logos/today_black_24dp.svg";
 import bellIcon from "../../../assets/logos/bell.png";
 import userImg from "../../../assets/images/user/cheerful-curly-business-girl-wearing-glasses.jpg";
 import DashBoardCalendar from "./DashBoardCalendar";
 import rocketicon from "../../../assets/logos/rocket.svg";
 import interview from "../../../assets/logos/interview.svg";
-import DashBoardPosts from "./DashBoardPosts";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Account from "./Account";
-import Analytics from "./Analytics";
-import Companies from "./Companies";
 import DashBoardPages from "./DashBoardPages";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const DashBoard = () => {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);

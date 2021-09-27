@@ -1,8 +1,8 @@
 import React from "react";
-import { useState } from "react";
+
 import classes from "./Header.module.css";
 import AIT from "../../../assets/logos/AIT black logo.png";
-import Signup from "../auth/Signup";
+
 import { Link } from "react-router-dom";
 const Header = (props) => {
   const signupHandler = () => {
