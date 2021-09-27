@@ -3,21 +3,20 @@ import classes from "./Login.module.css";
 
 import Card from "../../UI/Card";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "../../store";
 const Login = (props) => {
-  const btnClickHandler = (e) => {
-    e.preventDefault();
-  };
+  const dispatch = useDispatch();
 
-  // const clickHandler = () => {
-  //   props.hideLogin(false);
-  // };
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
+  const loginHandler = (e) => {
+    dispatch(authActions.login());
+  };
   return (
     <div className={classes.login}>
-      {/* <div className="backdrop" onClick={clickHandler}></div> */}
-
       <Card>
         <div className={classes["login-form"]}>
-          <form action="/nemetrix">
+          <form onSubmit={loginHandler}>
             <div className={classes["form-div"]}>
               <h1 className={classes["form-heading"]}>
                 Log <span>in</span>{" "}
@@ -37,11 +36,12 @@ const Login = (props) => {
                     </select>
                   </label>
                 </div>
-                <div className={classes["form-submit"]}>
-                  <Link to="/dashboard">
-                    <button onClick={btnClickHandler}>Log-in</button>
-                  </Link>
-                </div>
+                <Link to="/dashboard">
+                  <div className={classes["form-submit"]}>
+                    <button onClick={loginHandler}>Log-in</button>
+                  </div>
+                </Link>
+
                 <div className={classes["forgot-password"]}>
                   <p>Forgot your password ?</p>
                 </div>

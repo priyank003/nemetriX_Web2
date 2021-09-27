@@ -78,8 +78,8 @@ select {
 }
 
 .form-submit button {
-  margin-top: 30px;
   width: 100%;
+
   height: 50px;
   border-radius: 15px;
   border: none;
@@ -88,6 +88,9 @@ select {
   font-family: var(--font-primary);
   font-size: 1.2rem;
   cursor: pointer;
+}
+.input-dropdown {
+  margin-bottom: 3rem;
 }
 .input-dropdown select {
   margin-top: 1rem;
