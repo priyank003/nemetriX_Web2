@@ -19,15 +19,14 @@
   margin-top: 0;
 }
 
-/* .analytics-packages {
-  margin-bottom: 2rem;
-  background: white;
-  padding: 25px;
-  border-radius: 25px;
-  padding-bottom: 10px;
-} */
-/* .analytics-packages h1 {
-  font-size: 1.5rem;
-  color: var(--color-primary-font);
-  margin-top: 0;
-} */
+@media (max-width: 460px) {
+  .analytics {
+    height: fit-content;
+    padding: 0;
+  }
+  .analytics-container div {
+  }
+  .analytics-container div h1 {
+    font-size: 1rem;
+  }
+}
