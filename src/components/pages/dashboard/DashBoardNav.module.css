@@ -72,3 +72,24 @@
 .dashboard-nav-logout img {
   cursor: pointer;
 }
+
+@media (max-width: 460px) {
+  .dashBoardNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    animation: showNav 1000ms ease-out;
+  }
+
+  @keyframes showNav {
+    from {
+      left: -100px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
