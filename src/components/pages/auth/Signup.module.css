@@ -6,22 +6,37 @@
   font-family: var(--font-primary);
 
   z-index: 100;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 .signup-form {
+  background: rgb(255, 255, 255);
+  box-shadow: 0.7px 0.3px 5px rgba(0, 0, 0, 0.008),
+    1.7px 0.7px 11.9px rgba(0, 0, 0, 0.012),
+    3.3px 1.3px 22.4px rgba(0, 0, 0, 0.015),
+    5.8px 2.2px 40px rgba(0, 0, 0, 0.018),
+    10.9px 4.2px 74.8px rgba(0, 0, 0, 0.022),
+    26px 10px 179px rgba(0, 0, 0, 0.03);
+
+  width: fit-content;
+  border-radius: 20px;
   height: 100vh;
-  width: 100%;
+
   z-index: 1000;
   height: fit-content;
   width: fit-content;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .signup-form form {
   border-radius: 20px;
   width: 750px;
-  height: 100vh;
-  margin: auto;
+  height: fit-content;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   background: white;
@@ -128,4 +143,38 @@ select {
 .input-invalid {
   background: rgba(211, 171, 171, 0.493);
   border: 1px solid red;
+}
+
+@media (max-width: 460px) {
+  .signUp {
+    width: 90%;
+    margin: auto;
+  }
+  .signup-form {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .signup-form form {
+    box-sizing: border-box;
+    width: 80%;
+  }
+  .form-div {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .input-name {
+    flex-direction: column;
+  }
+  .input-name input {
+    margin-top: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .input-cedentials {
+    flex-direction: column;
+  }
+  .input-cedentials input {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
