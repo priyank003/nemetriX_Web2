@@ -1,8 +1,16 @@
 import classes from "./DashBoardNav.module.css";
 import AIT from "../../../assets/logos/AIT black logo.png";
 import jobImg from "../../../assets/images/jobprofiles.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import logoutIcon from "../../../assets/logos/logout_black_24dp.svg";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../store";
 const DashBoardNav = () => {
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(authActions.logout());
+  };
   return (
     <div className={classes.dashBoardNav}>
       <div className={classes["nav-top"]}>
@@ -51,6 +59,12 @@ const DashBoardNav = () => {
       <div className={classes["nav-bottom"]}>
         <div className={classes["dashboard-nav-img"]}>
           <img src={jobImg} alt="" />
+        </div>
+        <div className={classes["dashboard-nav-logout"]}>
+          <h3>logout </h3>
+          <Link to="/">
+            <img src={logoutIcon} onClick={logoutHandler} />
+          </Link>
         </div>
       </div>
     </div>

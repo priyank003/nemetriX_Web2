@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./components/pages/home/Footer";
 import Highlights from "./components/pages/home/Highlights";
 import { useSelector, useDispatch } from "react-redux";
-
+import store from "./components/store";
 function App() {
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
@@ -23,6 +23,8 @@ function App() {
     bool ? setShowLogin(bool) : setShowLogin(false);
   };
 
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
+  console.log(isAuth);
   return (
     <div>
       <div className="App">

@@ -62,3 +62,13 @@
 .dashboard-nav-img img {
   width: 200px;
 }
+.dashboard-nav-logout {
+  margin-top: 1rem;
+  color: var(--color-primary-font);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dashboard-nav-logout img {
+  cursor: pointer;
+}
