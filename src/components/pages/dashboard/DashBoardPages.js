@@ -2,7 +2,7 @@ import Account from "./Account";
 import Analytics from "./Analytics";
 import DashBoardPosts from "./DashBoardPosts";
 import Companies from "./Companies";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const DashBoardPages = () => {
   return (
     <div>
