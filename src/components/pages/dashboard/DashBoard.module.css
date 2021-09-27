@@ -30,6 +30,8 @@
 }
 .dashboard-main {
   width: 70%;
+  display: flex;
+  flex-direction: column;
 
   border-radius: 25px;
 }
@@ -43,101 +45,6 @@
   flex-direction: column;
   width: 60%;
   height: 100%;
-}
-.dashboard-main-header {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem;
-  margin-bottom: 0;
-}
-
-.dashboard-search {
-  display: flex;
-  align-items: center;
-}
-.dashboard-search span {
-  font-size: 1.4rem;
-  color: var(--color-primary-font);
-  font-weight: 600;
-}
-
-.search-input {
-  margin-left: 30px;
-  display: flex;
-}
-
-.search-input input {
-  border: none;
-  height: 40px;
-  padding-left: 10px;
-  border-radius: 10px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.search-input input:focus {
-  outline: none;
-}
-.search-icon {
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 0 10px;
-}
-
-.dashboard-user {
-  display: flex;
-  justify-content: space-evenly;
-  width: 35%;
-}
-.user-date {
-  background: white;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  border-radius: 15px;
-}
-.user-date span {
-  margin-left: 10px;
-  font-weight: 600;
-  font-size: 0.8rem;
-  color: var(--color-primary-font);
-}
-.user-notifications {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.user-notifications img {
-  width: 20px;
-}
-.user-profile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.user-profile img {
-  width: 50px;
-  border-radius: 50%;
-}
-.user-notifications span {
-  position: absolute;
-  left: 12px;
-  top: 13px;
-  background: #f54748;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.7rem;
 }
 
 .main-right {
@@ -212,4 +119,30 @@
   color: var(--color-primary-font);
   font-size: 1.2rem;
   margin: 0;
+}
+
+@media (max-width: 460px) {
+  .dashboard {
+    margin-bottom: 0;
+    box-sizing: border-box;
+  }
+  .dashboard-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    align-items: center;
+  }
+
+  .main-right {
+    display: none;
+  }
+  .main-left {
+    width: 100%;
+    margin: 0;
+  }
+  .dashboard-main-container {
+    width: 90%;
+    box-sizing: border-box;
+  }
 }
