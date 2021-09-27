@@ -22,5 +22,16 @@
 }
 .dashboard-notices {
   height: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 460px) {
+  .dashboard-posts {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .dashboard-notices {
+    padding-bottom: 0;
+  }
 }

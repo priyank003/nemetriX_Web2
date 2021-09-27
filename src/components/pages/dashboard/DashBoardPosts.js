@@ -20,7 +20,6 @@ const DashBoardPosts = () => {
         <DashBoardPost />
         <DashBoardPost />
         <DashBoardPost />
-        <DashBoardPost />
       </div>
     </div>
   );
