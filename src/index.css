@@ -11,11 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.backdrop {
-  height: 120vh;
-  width: 100%;
-  background: #80c47f80;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
