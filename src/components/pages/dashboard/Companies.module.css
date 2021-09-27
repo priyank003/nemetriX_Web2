@@ -34,3 +34,15 @@
 .company-name h4 {
   text-align: center;
 }
+
+@media (max-width: 460px) {
+  .companies {
+    box-sizing: border-box;
+  }
+  .companies-header h3 {
+    font-size: 0.8rem;
+  }
+  .companies-categories div h4 {
+    font-size: 0.7rem;
+  }
+}

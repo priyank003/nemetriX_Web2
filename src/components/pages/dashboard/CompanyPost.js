@@ -6,7 +6,7 @@ const CompanyPost = () => {
       <div className={classes["company-post-container"]}>
         <div className={classes["company-post-header"]}>
           <div className={classes["company-logo"]}>
-            <img src={google}></img>
+            <img src={google} alt="company logo" />
           </div>
           <div className={classes["company-name"]}>
             <h3>Google</h3>
