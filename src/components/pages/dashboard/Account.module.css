@@ -48,6 +48,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .user-id h1 {
   margin: 0;
@@ -106,4 +107,25 @@
   padding: 10px 20px 10px;
   cursor: pointer;
   border-radius: 20px;
+}
+
+@media (max-width: 460px) {
+  .user-img img {
+    width: 100px;
+  }
+  .user-name h1 {
+    font-size: 1.2rem;
+  }
+  .user-email p {
+    font-size: 1rem;
+  }
+  .user-study h2 {
+    font-size: 1rem;
+  }
+  .adv-heading h1 {
+    font-size: 1.2rem;
+  }
+  .adv-link a {
+    font-size: 0.8rem;
+  }
 }

@@ -1,8 +1,6 @@
 import React from "react";
 import classes from "./Account.module.css";
 import userImg from "../../../assets/images/user/cheerful-curly-business-girl-wearing-glasses.jpg";
-import Button from "../../UI/Button";
-import { Link } from "react-router-dom";
 
 const Account = () => {
   return (
@@ -10,7 +8,7 @@ const Account = () => {
       <div className={classes["account-container"]}>
         <div className={classes["account-header"]}>
           <div className={classes["user-img"]}>
-            <img src={userImg} />
+            <img src={userImg} alt="userimg" />
           </div>
           <div className={classes["user-credentials"]}>
             <div className={classes["user-id"]}>
