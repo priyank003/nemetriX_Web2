@@ -7,7 +7,7 @@
   justify-content: space-around;
   margin-top: 1rem;
   border-bottom: 1px solid rgb(207, 199, 199);
-  /* box-shadow: 0 0 10px black; */
+
   border-radius: 10px;
 }
 .company-logo {
@@ -33,4 +33,16 @@
 .company-post-header {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 460px) {
+  .company-name h3 {
+    font-size: 1rem;
+  }
+  .company-category {
+    font-size: 0.8rem;
+  }
+  .company-job-vacancy {
+    font-size: 0.9rem;
+  }
 }
