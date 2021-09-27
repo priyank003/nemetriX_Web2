@@ -70,3 +70,46 @@
 .admin-name {
   margin-top: 0;
 }
+.footer-copyright-mobile {
+  display: none;
+}
+/* below 450px screen size */
+
+@media (max-width: 460px) {
+  .footer {
+    height: fit-content;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  .footer-container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer-address {
+    align-items: center;
+  }
+  .clg-name {
+    margin-bottom: 0;
+  }
+  .footer-address p {
+    text-align: center;
+    margin-top: 15px;
+  }
+  .footer-copyright {
+    display: none;
+  }
+
+  .footer-admin {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-feedback {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .footer-copyright-mobile {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}

@@ -40,9 +40,12 @@ const Footer = () => {
           <div className={classes["feedback-input"]}>
             <input type="text" />
             <div className={classes["feedback-send"]}>
-              <a href="#">Send</a>
+              <a href="/">Send</a>
             </div>
           </div>
+        </div>
+        <div className={classes["footer-copyright-mobile"]}>
+          <span>&copy;</span>2021 Team nemetriX all rights reserved
         </div>
       </div>
     </div>
