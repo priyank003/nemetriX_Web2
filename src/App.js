@@ -6,9 +6,11 @@ import Signup from "./components/pages/auth/Signup";
 import Login from "./components/pages/auth/Login";
 import DashBoard from "./components/pages/dashboard/DashBoard";
 import { useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./components/pages/home/Footer";
 import Highlights from "./components/pages/home/Highlights";
+import { useSelector, useDispatch } from "react-redux";
+
 function App() {
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
@@ -25,13 +27,6 @@ function App() {
     <div>
       <div className="App">
         <Switch>
-          <Route path="/home">
-            <Header onSignup={signupHandler} onLogin={loginHandler} />
-            <Landing />
-
-            <Highlights />
-          </Route>
-
           <Route path="/signup">
             <Header onSignup={signupHandler} onLogin={loginHandler} />
             <Signup />
@@ -41,8 +36,16 @@ function App() {
             <Header onSignup={signupHandler} onLogin={loginHandler} />
             <Login />
           </Route>
+
           <Route path="/dashboard">
             <DashBoard />
+          </Route>
+
+          <Route path="/">
+            <Header onSignup={signupHandler} onLogin={loginHandler} />
+            <Landing />
+
+            <Highlights />
           </Route>
         </Switch>
       </div>
