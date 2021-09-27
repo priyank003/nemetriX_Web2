@@ -7,6 +7,7 @@
   border-bottom: 1px solid rgb(207, 199, 199);
   /* box-shadow: 0 0 10px black; */
   border-radius: 10px;
+  padding-bottom: 8px;
 }
 .post-icon {
   background: #a5d7d3;
@@ -34,4 +35,31 @@
 }
 .post-date span {
   font-size: 0.8rem;
+}
+.post-expand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 460px) {
+  .post-header h3 {
+    font-size: 0.8rem;
+  }
+  .post-expand a {
+    font-size: 0.7rem;
+  }
+  .post-date p {
+    font-size: 0.5rem;
+  }
+  .post-date span {
+    font-size: 0.4rem;
+  }
+  .post-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .post-icon img {
+    width: 20px;
+  }
 }
