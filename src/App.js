@@ -5,37 +5,50 @@ import Landing from "./components/pages/home/Landing";
 import Signup from "./components/pages/auth/Signup";
 import Login from "./components/pages/auth/Login";
 import DashBoard from "./components/pages/dashboard/DashBoard";
-import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { Switch, Route } from "react-router-dom";
 import Footer from "./components/pages/home/Footer";
 import Highlights from "./components/pages/home/Highlights";
-import { useSelector, useDispatch } from "react-redux";
-import store from "./components/store";
+
+import { useState, useEffect } from "react";
 function App() {
-  const [showSignup, setShowSignup] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height,
+    };
+  }
 
-  const signupHandler = (bool) => {
-    bool ? setShowSignup(bool) : setShowSignup(false);
-  };
+  function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(
+      getWindowDimensions()
+    );
 
-  const loginHandler = (bool) => {
-    bool ? setShowLogin(bool) : setShowLogin(false);
-  };
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
 
-  const isAuth = useSelector((state) => state.auth.isAuthenticated);
-  console.log(isAuth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return windowDimensions;
+  }
+  const { width } = useWindowDimensions();
+
   return (
     <div>
       <div className="App">
         <Switch>
           <Route path="/signup">
-            <Header onSignup={signupHandler} onLogin={loginHandler} />
+            <Header />
             <Signup />
           </Route>
 
           <Route path="/login">
-            <Header onSignup={signupHandler} onLogin={loginHandler} />
+            <Header />
             <Login />
           </Route>
 
@@ -44,14 +57,15 @@ function App() {
           </Route>
 
           <Route path="/">
-            <Header onSignup={signupHandler} onLogin={loginHandler} />
+            <Header />
             <Landing />
 
             <Highlights />
+            {width < 460 ? <Footer /> : ""}
           </Route>
         </Switch>
       </div>
-      <Footer />
+      {width < 460 ? "" : <Footer />}
     </div>
   );
 }
