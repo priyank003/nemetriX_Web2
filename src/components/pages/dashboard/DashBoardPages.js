@@ -2,10 +2,10 @@ import Account from "./Account";
 import Analytics from "./Analytics";
 import DashBoardPosts from "./DashBoardPosts";
 import Companies from "./Companies";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 const DashBoardPages = () => {
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <Switch>
         <Route path="/dashboard/account">
           <Account />
