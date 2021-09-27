@@ -15,7 +15,12 @@ const Header = (props) => {
   return (
     <div className={classes.header}>
       <div className={classes["header-container"]}>
-        <Link to="/home">
+        <Link
+          style={{
+            textDecoration: "none",
+          }}
+          to="/"
+        >
           <div className={classes["header-brand"]}>
             <img src={AIT} alt="" />
             <h1>AIT Placement cell</h1>
@@ -23,10 +28,6 @@ const Header = (props) => {
         </Link>
 
         <div className={classes["header-nav"]}>
-          {/* <div className={classes["nav-links"]}>
-            <a href="/">Home </a>
-          </div> */}
-
           <div className={classes["nav-auth"]}>
             <Link to="/login">
               <button className={classes["auth-login"]} onClick={loginHandler}>
