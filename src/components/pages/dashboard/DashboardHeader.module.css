@@ -1,0 +1,136 @@
+.dashboard-main-header {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+
+  margin: 1rem;
+  margin-bottom: 0;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-search {
+  display: flex;
+  align-items: center;
+}
+.dashboard-search span {
+  font-size: 1.4rem;
+  color: var(--color-primary-font);
+  font-weight: 600;
+}
+
+.search-input {
+  margin-left: 30px;
+  display: flex;
+}
+
+.search-input input {
+  border: none;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.search-input input:focus {
+  outline: none;
+}
+.search-icon {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 0 10px;
+}
+
+.dashboard-user {
+  display: flex;
+  justify-content: space-evenly;
+  width: 35%;
+}
+.user-date {
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+}
+.user-date span {
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--color-primary-font);
+}
+.user-notifications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.user-notifications img {
+  width: 20px;
+}
+.user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-profile img {
+  width: 50px;
+  border-radius: 50%;
+}
+.user-notifications span {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  background: #f54748;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+.dashboard-ham-menu {
+  display: none;
+}
+@media (max-width: 460px) {
+  .user-date {
+    display: none;
+  }
+  .header-bottom .search-input {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  .search-input input {
+    box-sizing: border-box;
+    flex: 1;
+  }
+  .dashboard-user {
+    flex: 0.4;
+    width: fit-content;
+    justify-content: space-between;
+  }
+  .dashboard-ham-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .dashboard-ham-menu img {
+    cursor: pointer;
+  }
+  .user-profile img {
+    margin-left: 10px;
+  }
+}
