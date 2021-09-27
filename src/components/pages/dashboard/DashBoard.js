@@ -15,7 +15,13 @@ import Account from "./Account";
 import Analytics from "./Analytics";
 import Companies from "./Companies";
 import DashBoardPages from "./DashBoardPages";
+import { useSelector, useDispatch } from "react-redux";
+
 const DashBoard = () => {
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
+
+  console.log(isAuth);
+
   return (
     <div className={classes.dashboard}>
       <div className={classes["dashboard-container"]}>

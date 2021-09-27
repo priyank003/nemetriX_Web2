@@ -39,7 +39,10 @@
   justify-content: space-between;
 }
 .main-left {
+  display: flex;
+  flex-direction: column;
   width: 60%;
+  height: 100%;
 }
 .dashboard-main-header {
   display: flex;
