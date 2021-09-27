@@ -5,13 +5,6 @@ import AIT from "../../../assets/logos/AIT black logo.png";
 
 import { Link } from "react-router-dom";
 const Header = (props) => {
-  const signupHandler = () => {
-    props.onSignup(true);
-  };
-
-  const loginHandler = () => {
-    props.onLogin(true);
-  };
   return (
     <div className={classes.header}>
       <div className={classes["header-container"]}>
@@ -22,7 +15,10 @@ const Header = (props) => {
           to="/"
         >
           <div className={classes["header-brand"]}>
-            <img src={AIT} alt="" />
+            <div className={classes["header-brand-img"]}>
+              <img src={AIT} alt="" />
+            </div>
+
             <h1>AIT Placement cell</h1>
           </div>
         </Link>
@@ -30,17 +26,10 @@ const Header = (props) => {
         <div className={classes["header-nav"]}>
           <div className={classes["nav-auth"]}>
             <Link to="/login">
-              <button className={classes["auth-login"]} onClick={loginHandler}>
-                LOG-IN
-              </button>
+              <button className={classes["auth-login"]}>Sign-in</button>
             </Link>
             <Link to="/signup">
-              <button
-                className={classes["auth-signup"]}
-                onClick={signupHandler}
-              >
-                SIGN-UP
-              </button>
+              <button className={classes["auth-signup"]}>Register</button>
             </Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 @import "../../UI/constant/vars.css";
 .header {
+  /* border: 1px solid red; */
   margin-top: 10px;
   font-family: var(--font-primary);
   height: 4rem;
@@ -25,8 +26,9 @@
   font-family: "Josefin Sans", sans-serif;
   color: var(--color-primary-font);
 }
-.header-brand img {
-  width: 70px;
+
+.header-brand-img img {
+  width: 60px;
 }
 
 .auth-login {
@@ -52,4 +54,33 @@
   margin-left: 2rem;
   font-size: 0.8rem;
   cursor: pointer;
+}
+
+/* below 460px screen width */
+@media (max-width: 460px) {
+  .header {
+    width: 100%;
+    height: fit-content;
+  }
+  .header-container {
+    padding: 20px;
+  }
+  .header-brand {
+    /* flex-direction: column; */
+  }
+  .header-brand img {
+    width: 60px;
+  }
+  .header-brand h1 {
+    font-size: 1rem;
+  }
+  .auth-login {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    box-shadow: 0 0 5px var(--color-primary);
+  }
+  .auth-signup {
+    display: none;
+  }
 }
