@@ -11,6 +11,7 @@ const router = express.Router();
  */
 let schema = new Schema(
     {
+      email: String,
       username: String,
       password: String
     },
@@ -28,11 +29,15 @@ router.post('/login/', function(req, res) {
   let email = req.body.email;
   let password = req.body.password;
   console.log(req.body)
-  users.find({username: email, password: password}, function (err, data){
+  users.find({email: email, password: password}, function (err, data ){
     if (data.length === 0){
-      res.status(400).json({error: err});
+      res.status(200).json({message: "Error"});
     } else{
-      res.status(200).json({data: data, err: err});
+      if (email === "admin"){
+          res.status(200).json({username: data.username, message: "Admin"});
+      } else {
+          res.status(200).json({username: data.username, message: "Success"});
+      }
     }
   });
 });
