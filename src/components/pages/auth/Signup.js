@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Signup.module.css";
 
 import useInput from "../../../hooks/use-input";
-
+import axios from "axios";
+import { useEffect } from "react";
 const Signup = (props) => {
   const {
     value: enteredName,
@@ -30,6 +31,39 @@ const Signup = (props) => {
     inputBlurHandler: idBlurHandler,
     // reset: resetIdInput,
   } = useInput((value) => value.trim() !== "");
+  const {
+    value: enteredlastName,
+    // isValid: enteredNameIsValid,
+    // hasEror: nameInputHasEror,
+    valueChangeHandler: lastNameChangeHandler,
+    inputBlurHandler: lastNameBlurHandler,
+    reset: resetLastNameInput,
+  } = useInput((value) => value.trim() !== "");
+  const {
+    value: enteredYear,
+    // isValid: enteredYearIsValid,
+    hasEror: YearInputHasEror,
+    valueChangeHandler: yearChangeHandler,
+    inputBlurHandler: yearBlurHandler,
+    reset: resetYearInput,
+  } = useInput((value) => value.trim() !== "");
+  const {
+    value: enteredbranch,
+    isValid: enteredBranchIsValid,
+    hasEror: branchInputHasEror,
+    valueChangeHandler: branchChangeHandler,
+    inputBlurHandler: branchBlurHandler,
+    reset: resetbranchInput,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredPassword,
+    isValid: enteredPasswordIsValid,
+    hasEror: passwordInputHasEror,
+    valueChangeHandler: passwordChangeHandler,
+    inputBlurHandler: passwordBlurHandler,
+    reset: resetPasswordInput,
+  } = useInput((value) => value.trim() !== "");
   let formIsValid = false;
 
   if (enteredNameIsValid) {
@@ -45,16 +79,38 @@ const Signup = (props) => {
 
     resetNameInput();
   };
+  //post request
 
-  //hide modal by clcik on backdrop
-  // const hideModalHandler = () => {
-  //   props.hideSignup(false);
-  // };
+  const baseURL = "http://localhost:3001/signup";
+
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios.get(`${baseURL}/1`).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  function updatePost() {
+    axios
+      .post(`${baseURL}/1`, {
+        username: `${enteredName}`,
+        lastname: `${enteredlastName}`,
+        firstname: `${enteredName}`,
+        password: `${enteredPassword}`,
+        year: `${enteredYear}`,
+        branch: `${enteredbranch}`,
+        email: `${enteredEmail}`,
+        registration: `${enteredId}`,
+      })
+      .then((response) => {
+        console.log(response);
+        setPost(response.data);
+      });
+  }
 
   return (
     <div className={classes.signUp}>
-      {/* <div className="backdrop" onClick={hideModalHandler}></div> */}
-
       <div className={classes["signup-form"]}>
         <form action="/nemetrix" onSubmit={formSubmissionHandler}>
           <div className={classes["form-div"]}>
@@ -73,7 +129,13 @@ const Signup = (props) => {
                   }
                   onBlur={nameBlurHandler}
                 />
-                <input type="text" placeholder="last name" />
+                <input
+                  type="text"
+                  placeholder="last name"
+                  onChange={lastNameChangeHandler}
+                  value={enteredlastName}
+                  onBlur={lastNameBlurHandler}
+                />
               </div>
               {nameInputHasEror && (
                 <p className={classes["eror-text"]}>Name must not be empty</p>
@@ -111,7 +173,13 @@ const Signup = (props) => {
               <div className={classes["input-study"]}>
                 <label htmlFor="">
                   <span>Year</span>
-                  <select name="year" id="year-select">
+                  <select
+                    name="year"
+                    id="year-select"
+                    onChange={yearChangeHandler}
+                    value={enteredYear}
+                    onBlur={yearBlurHandler}
+                  >
                     <option value="">Select</option>
                     <option value="third">TE</option>
                     <option value="fourth">BE</option>
@@ -122,7 +190,13 @@ const Signup = (props) => {
                 <label htmlFor="">
                   <span>Branch</span>
 
-                  <select name="branch" id="branch-select">
+                  <select
+                    name="branch"
+                    id="branch-select"
+                    onChange={branchChangeHandler}
+                    value={enteredbranch}
+                    onBlur={branchBlurHandler}
+                  >
                     <option value="">Select</option>
                     <option value="comp">Computer Engeering</option>
                     <option value="it">Information Technology</option>
@@ -132,11 +206,17 @@ const Signup = (props) => {
                 </label>
               </div>
               <div className={classes["input-password"]}>
-                <input type="password" placeholder="set password" />
+                <input
+                  type="password"
+                  placeholder="set password"
+                  onChange={passwordChangeHandler}
+                  value={enteredPassword}
+                  onBlur={passwordBlurHandler}
+                />
                 <input type="password" placeholder="confirm passwword" />
               </div>
               <div className={classes["form-submit"]}>
-                <button disabled={!formIsValid}>Sign-up</button>
+                <button onClick={updatePost}>Sign-up</button>
               </div>
             </div>
           </div>
