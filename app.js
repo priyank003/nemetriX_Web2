@@ -5,11 +5,11 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const flash = require('flash');
-const port = process.env.PORT || 3001;
+const port = 3001;
 require('dotenv').config();
 
 let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/login');
+let usersRouter = require('./routes/user');
 let authRouter = require('./routes/auth');
 
 let app = express();
