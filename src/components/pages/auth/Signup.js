@@ -36,37 +36,38 @@ const Signup = (props) => {
     // isValid: enteredNameIsValid,
     // hasEror: nameInputHasEror,
     valueChangeHandler: lastNameChangeHandler,
-    inputBlurHandler: lastNameBlurHandler,
+    inputBlurHandler: lastNameBlurHandler, // eslint-disable-next-line
     reset: resetLastNameInput,
   } = useInput((value) => value.trim() !== "");
   const {
     value: enteredYear,
     // isValid: enteredYearIsValid,
-    hasEror: YearInputHasEror,
+    // hasEror: YearInputHasEror,
     valueChangeHandler: yearChangeHandler,
-    inputBlurHandler: yearBlurHandler,
+    inputBlurHandler: yearBlurHandler, // eslint-disable-next-line
     reset: resetYearInput,
   } = useInput((value) => value.trim() !== "");
   const {
-    value: enteredbranch,
-    isValid: enteredBranchIsValid,
-    hasEror: branchInputHasEror,
+    value: enteredbranch, // eslint-disable-next-line
+    isValid: enteredBranchIsValid, // eslint-disable-next-line
+    hasEror: branchInputHasEror, // eslint-disable-next-line
     valueChangeHandler: branchChangeHandler,
-    inputBlurHandler: branchBlurHandler,
+    inputBlurHandler: branchBlurHandler, // eslint-disable-next-line
     reset: resetbranchInput,
   } = useInput((value) => value.trim() !== "");
 
   const {
-    value: enteredPassword,
-    isValid: enteredPasswordIsValid,
+    value: enteredPassword, // eslint-disable-next-line
+    isValid: enteredPasswordIsValid, // eslint-disable-next-line
     hasEror: passwordInputHasEror,
     valueChangeHandler: passwordChangeHandler,
-    inputBlurHandler: passwordBlurHandler,
+    inputBlurHandler: passwordBlurHandler, // eslint-disable-next-line
     reset: resetPasswordInput,
   } = useInput((value) => value.trim() !== "");
   let formIsValid = false;
 
   if (enteredNameIsValid) {
+    // eslint-disable-next-line
     formIsValid = true;
   }
   const formSubmissionHandler = (e) => {
@@ -82,7 +83,7 @@ const Signup = (props) => {
   //post request
 
   const baseURL = "http://localhost:3001/signup";
-
+  // eslint-disable-next-line
   const [post, setPost] = useState(null);
 
   useEffect(() => {
@@ -93,7 +94,7 @@ const Signup = (props) => {
 
   function updatePost() {
     axios
-      .post(`${baseURL}/1`, {
+      .post(`${baseURL}`, {
         username: `${enteredName}`,
         lastname: `${enteredlastName}`,
         firstname: `${enteredName}`,
