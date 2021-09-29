@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./CompanyPost.module.css";
 import google from "../../../assets/logos/Google__G__Logo.svg.png";
 const CompanyPost = () => {

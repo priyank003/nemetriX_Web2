@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./Analytics.module.css";
 import { Bar, Line, Doughnut } from "react-chartjs-2";
 import Salary from "../../graphs/Salary";

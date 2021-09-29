@@ -1,3 +1,4 @@
+import React from "react";
 import Account from "./Account";
 import Analytics from "./Analytics";
 import DashBoardPosts from "./DashBoardPosts";

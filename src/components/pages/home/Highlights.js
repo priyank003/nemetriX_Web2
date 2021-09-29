@@ -1,3 +1,5 @@
+import React from "react";
+
 import classes from "./Highlights.module.css";
 import { ReactComponent as StarIcon } from "../../UI/svg/auto_awesome_white_24dp.svg";
 import timelineElements from "./vertical-timeline/timelineElements";

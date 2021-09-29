@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./Companies.module.css";
 import filter from "../../../assets/logos/filter_list_black_24dp.svg";
 import CompanyPost from "./CompanyPost";

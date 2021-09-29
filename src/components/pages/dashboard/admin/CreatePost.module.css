@@ -1,3 +1,4 @@
+@import "../../../UI/constant/vars.css";
 .create-post {
   position: fixed;
   top: 0;
@@ -72,7 +73,33 @@ input {
 .upload-image img {
   width: 100%;
 }
+.form-input {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.form-input input {
+  padding: 10px;
+}
+.post-btn {
+  background: var(--color-primary);
+  border: none;
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: white;
+  align-self: flex-end;
+  margin-right: 3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
 
+.post-form form {
+  display: flex;
+  flex-direction: column;
+}
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;

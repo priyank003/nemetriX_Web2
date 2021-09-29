@@ -1,6 +1,7 @@
 .dashboard-posts {
   width: 100%;
-  height: 100%;
+  height: 520px;
+  overflow: auto;
   background: white;
   border-radius: 20px;
   padding: 10px;
@@ -28,6 +29,7 @@
 @media (max-width: 460px) {
   .dashboard-posts {
     width: 100%;
+
     margin: 0;
     box-sizing: border-box;
   }

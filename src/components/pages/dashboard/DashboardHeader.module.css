@@ -182,4 +182,7 @@
   .user-profile img {
     margin-left: 10px;
   }
+  .admin-create-post {
+    transform: scale(0.8);
+  }
 }

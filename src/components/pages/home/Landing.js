@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./Landing.module.css";
 import college from "../../../assets/images/ait2.55aa091d.webp";
 import greenCurve from "../../../assets/logos/green-curve.svg";

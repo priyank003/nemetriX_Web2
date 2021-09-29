@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./DashBoard.module.css";
 import DashBoardNav from "./DashBoardNav";
 

@@ -2,10 +2,11 @@
 .dashboardPost {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 1rem;
   border-bottom: 1px solid rgb(207, 199, 199);
-  /* box-shadow: 0 0 10px black; */
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
   padding-bottom: 8px;
 }
@@ -21,9 +22,20 @@
 .post-icon img {
   width: 30px;
 }
+.post-header {
+  display: flex;
+  justify-content: center;
+}
+.post-end {
+  display: flex;
+  justify-content: flex-end;
+
+  flex: 1;
+}
 .post-header h3 {
   color: var(--color-primary-font);
   font-weight: 500;
+  margin-left: 20px;
 }
 .post-date {
   display: flex;
@@ -36,14 +48,77 @@
 .post-date span {
   font-size: 0.8rem;
 }
-.post-expand {
+.post-expand-link {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 3rem;
 }
-.post-expand a {
+.post-expand-link a {
   text-decoration: none;
   color: var(--color-primary);
+}
+
+.post-expand {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: black;
+  background-color: rgb(0, 0, 0, 0.8);
+  z-index: 1000;
+  animation: fadeIn 500ms;
+}
+.post-content {
+  width: 100%;
+  max-width: 552px;
+  background-color: white;
+  max-height: 90%;
+
+  overflow: initial;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 32px;
+  margin: 0 auto;
+}
+.post-header {
+  display: block;
+  padding: 16px 28px;
+
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-header button {
+  cursor: pointer;
+}
+.post-content-area {
+  padding: 12px 24px;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 460px) {

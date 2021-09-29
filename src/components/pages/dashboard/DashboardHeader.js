@@ -71,7 +71,6 @@ const DashboardHeader = () => {
   const hoverHandler = () => {
     setShowHover(true);
   };
-  console.log(userLogin);
 
   //createPost
   const [showCreatePost, setShowCreatePost] = useState(false);

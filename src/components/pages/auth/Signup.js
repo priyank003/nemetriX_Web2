@@ -4,6 +4,7 @@ import classes from "./Signup.module.css";
 import useInput from "../../../hooks/use-input";
 import axios from "axios";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const Signup = (props) => {
   const {
     value: enteredName,
@@ -80,7 +81,7 @@ const Signup = (props) => {
 
     resetNameInput();
   };
-  //post request
+  //post request axios
 
   const baseURL = "http://localhost:3001/signup";
   // eslint-disable-next-line
@@ -216,9 +217,11 @@ const Signup = (props) => {
                 />
                 <input type="password" placeholder="confirm passwword" />
               </div>
-              <div className={classes["form-submit"]}>
-                <button onClick={updatePost}>Sign-up</button>
-              </div>
+              <Link to="/login">
+                <div className={classes["form-submit"]}>
+                  <button onClick={updatePost}>Sign-up</button>
+                </div>
+              </Link>
             </div>
           </div>
         </form>
