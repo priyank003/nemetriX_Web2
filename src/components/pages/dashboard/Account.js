@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Account.module.css";
 import userImg from "../../../assets/images/user/cheerful-curly-business-girl-wearing-glasses.jpg";
+import axios from "axios";
+
+// eslint-disable-next-line
 
 const Account = () => {
+  const [userData, setUserData] = useState([]);
+
   return (
     <div className={classes.account}>
       <div className={classes["account-container"]}>
