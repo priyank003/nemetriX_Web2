@@ -123,6 +123,15 @@ select {
 .signup-req p {
   margin-right: 1rem;
 }
+.signup-req a {
+  margin: auto;
+  margin-left: 0;
+  text-decoration: none;
+}
+.form-submit a {
+  width: 100%;
+}
+
 @media (max-width: 460px) {
   .login {
   }

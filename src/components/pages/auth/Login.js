@@ -1,15 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
 import classes from "./Login.module.css";
 
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/auth-slice";
+import { useRef } from "react";
+
+import Config from "../../../azure/auth/Config";
+import { PublicClientApplication } from "@azure/msal-browser";
+
 const Login = () => {
   const dispatch = useDispatch();
 
+  const emailInputRef = useRef();
+  const selectInputRef = useRef();
   const loginHandler = (e) => {
-    dispatch(authActions.login());
+    // eslint-disable-next-line
+    const enteredMail = emailInputRef.current.value;
+    const enteredSelect = selectInputRef.current.value;
+
+    dispatch(authActions.login(enteredSelect));
+    console.log(e);
   };
+
   return (
     <div className={classes.login}>
       <div className={classes["login-form"]}>
@@ -24,24 +37,29 @@ const Login = () => {
                 <p>Not registered yet ?</p> <Link to="/signup"> Sign-up</Link>
               </div>
               <div className={classes["input-cedentials"]}>
-                <input type="email" placeholder="AIT email" />
+                <input
+                  type="email"
+                  ref={emailInputRef}
+                  placeholder="AIT email"
+                />
                 <input type="password" placeholder="password" />
               </div>
               <div className={classes["input-dropdown"]}>
                 <label htmlFor="">
                   <span>Login as</span>
-                  <select name="year" id="year-select">
+                  <select name="year" id="year-select" ref={selectInputRef}>
                     <option value="">Select</option>
                     <option value="student">student</option>
                     <option value="admin">admin</option>
                   </select>
                 </label>
               </div>
-              <Link to="/dashboard">
-                <div className={classes["form-submit"]}>
+
+              <div className={classes["form-submit"]}>
+                <Link to="/dashboard">
                   <button onClick={loginHandler}>Log-in</button>
-                </div>
-              </Link>
+                </Link>
+              </div>
 
               <div className={classes["forgot-password"]}>
                 <p>Forgot your password ?</p>
