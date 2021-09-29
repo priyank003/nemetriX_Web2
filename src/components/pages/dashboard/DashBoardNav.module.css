@@ -72,7 +72,12 @@
 .dashboard-nav-logout img {
   cursor: pointer;
 }
-
+.nav-link a {
+  text-decoration: none;
+}
+.dashboard-nav-links a {
+  text-decoration: none;
+}
 @media (max-width: 460px) {
   .dashBoardNav {
     position: fixed;

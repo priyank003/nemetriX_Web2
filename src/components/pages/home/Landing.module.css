@@ -145,7 +145,6 @@
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
-    /* border: 1px solid red; */
   }
   .icons-wrap {
     /* border: 1px solid red; */
@@ -167,7 +166,7 @@
   }
   .landing-heading h1 {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-top: 0;
   }
   .landing-desc {
@@ -189,7 +188,5 @@
   }
   .landing-right-footer-mobile {
     display: block;
-  }
-  .landing-right-footer-mobile h1 {
   }
 }

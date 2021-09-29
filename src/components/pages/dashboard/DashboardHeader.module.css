@@ -22,11 +22,15 @@
 }
 
 .search-input {
+  margin-top: 1rem;
+
   margin-left: 30px;
   display: flex;
+  height: fit-content;
 }
 
 .search-input input {
+  border: 1px solid black;
   border: none;
   height: 40px;
   padding-left: 10px;
@@ -35,11 +39,13 @@
   border-bottom-right-radius: 0;
   font-size: 1rem;
   font-weight: 500;
+  box-sizing: border-box;
 }
 .search-input input:focus {
   outline: none;
 }
 .search-icon {
+  height: 40px;
   background: white;
   display: flex;
   justify-content: center;
@@ -102,6 +108,49 @@
 .dashboard-ham-menu {
   display: none;
 }
+.admin-create-post {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50px;
+  align-self: flex-start;
+  position: relative;
+}
+.svg-wrap {
+  background: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.admin-create-post img {
+  width: 35px;
+}
+.admin-hover-text {
+  position: absolute;
+  top: 3rem;
+  height: 50px;
+  width: 100px;
+  box-shadow: 0.7px 0.3px 5px rgba(0, 0, 0, 0.008),
+    1.7px 0.7px 11.9px rgba(0, 0, 0, 0.012),
+    3.3px 1.3px 22.4px rgba(0, 0, 0, 0.015),
+    5.8px 2.2px 40px rgba(0, 0, 0, 0.018),
+    10.9px 4.2px 74.8px rgba(0, 0, 0, 0.022),
+    26px 10px 179px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease-in 500ms;
+}
+.admin-hover-text span {
+  font-size: 0.8rem;
+}
+
 @media (max-width: 460px) {
   .user-date {
     display: none;

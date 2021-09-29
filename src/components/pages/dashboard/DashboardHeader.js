@@ -7,8 +7,11 @@ import userImg from "../../../assets/images/user/cheerful-curly-business-girl-we
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import hamMenu from "../../../assets/logos/menu_black_24dp.svg";
-import { useDispatch } from "react-redux";
+import createPost from "../../../assets/logos/add_circle_black_24dp.svg";
+import { useDispatch, useSelector } from "react-redux";
 import { sideNavActions } from "../../store/sideNav-slice";
+import CreatePost from "./admin/CreatePost";
+
 const DashboardHeader = () => {
   //getting browser size
 
@@ -58,7 +61,24 @@ const DashboardHeader = () => {
     return width > 460
       ? dispatch(sideNavActions.showSideNav())
       : dispatch(sideNavActions.hideSideNav());
-  }, [width]);
+  }, [dispatch, width]);
+
+  //login as student or admin
+  const userLogin = useSelector((state) => state.auth.loginAs);
+
+  const [showHover, setShowHover] = useState(false);
+
+  const hoverHandler = () => {
+    setShowHover(true);
+  };
+  console.log(userLogin);
+
+  //createPost
+  const [showCreatePost, setShowCreatePost] = useState(false);
+
+  const createPostHandler = () => {
+    setShowCreatePost((prev) => !prev);
+  };
 
   return (
     <div className={classes["dashboard-main-header"]}>
@@ -78,6 +98,31 @@ const DashboardHeader = () => {
             </div>
           )}
         </div>
+        {userLogin === "admin" ? (
+          <div className={classes["admin-create-post"]}>
+            <div
+              className={classes["svg-wrap"]}
+              onMouseEnter={hoverHandler}
+              onMouseLeave={() => setShowHover(false)}
+            >
+              <img
+                src={createPost}
+                alt="createpost"
+                onClick={createPostHandler}
+              />
+            </div>
+            {showHover && (
+              <div className={classes["admin-hover-text"]}>
+                <span>Create Post</span>
+              </div>
+            )}
+          </div>
+        ) : (
+          ""
+        )}
+
+        {showCreatePost && <CreatePost hideCreatePost={createPostHandler} />}
+
         <div className={classes["dashboard-user"]}>
           <div className={classes["user-date"]}>
             {" "}

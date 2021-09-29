@@ -35,6 +35,9 @@
   border: 1px solid rgb(117, 106, 106);
   box-sizing: border-box;
   padding-left: 1rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  height: 100%;
 }
 .feedback-input input:focus {
   outline: none;
@@ -73,6 +76,9 @@
 .footer-copyright-mobile {
   display: none;
 }
+.feedback-send a {
+  text-decoration: none;
+}
 /* below 450px screen size */
 
 @media (max-width: 460px) {
@@ -87,6 +93,9 @@
   }
   .footer-address {
     align-items: center;
+  }
+  .footer-address h3 {
+    text-align: center;
   }
   .clg-name {
     margin-bottom: 0;
