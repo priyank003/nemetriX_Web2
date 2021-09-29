@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/nemetriX_Web2/static/css/main.307dbb7d.chunk.css",
-    "main.js": "/nemetriX_Web2/static/js/main.cd313e6b.chunk.js",
-    "main.js.map": "/nemetriX_Web2/static/js/main.cd313e6b.chunk.js.map",
+    "main.css": "/nemetriX_Web2/static/css/main.632f69ea.chunk.css",
+    "main.js": "/nemetriX_Web2/static/js/main.e02e6525.chunk.js",
+    "main.js.map": "/nemetriX_Web2/static/js/main.e02e6525.chunk.js.map",
     "runtime-main.js": "/nemetriX_Web2/static/js/runtime-main.347559e4.js",
     "runtime-main.js.map": "/nemetriX_Web2/static/js/runtime-main.347559e4.js.map",
     "static/css/2.69c7af68.chunk.css": "/nemetriX_Web2/static/css/2.69c7af68.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.9c3a52b6.chunk.js.map": "/nemetriX_Web2/static/js/3.9c3a52b6.chunk.js.map",
     "index.html": "/nemetriX_Web2/index.html",
     "static/css/2.69c7af68.chunk.css.map": "/nemetriX_Web2/static/css/2.69c7af68.chunk.css.map",
-    "static/css/main.307dbb7d.chunk.css.map": "/nemetriX_Web2/static/css/main.307dbb7d.chunk.css.map",
+    "static/css/main.632f69ea.chunk.css.map": "/nemetriX_Web2/static/css/main.632f69ea.chunk.css.map",
     "static/js/2.c2f49abb.chunk.js.LICENSE.txt": "/nemetriX_Web2/static/js/2.c2f49abb.chunk.js.LICENSE.txt",
     "static/media/399-3994348_deutsche-bank-logo-png-transparent-png.69b382c7.png": "/nemetriX_Web2/static/media/399-3994348_deutsche-bank-logo-png-transparent-png.69b382c7.png",
     "static/media/580b57fcd9996e24bc43c51f.d7548f55.png": "/nemetriX_Web2/static/media/580b57fcd9996e24bc43c51f.d7548f55.png",
@@ -46,7 +46,7 @@
     "static/js/runtime-main.347559e4.js",
     "static/css/2.69c7af68.chunk.css",
     "static/js/2.c2f49abb.chunk.js",
-    "static/css/main.307dbb7d.chunk.css",
-    "static/js/main.cd313e6b.chunk.js"
+    "static/css/main.632f69ea.chunk.css",
+    "static/js/main.e02e6525.chunk.js"
   ]
 }
