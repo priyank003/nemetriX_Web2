@@ -1,5 +1,6 @@
 {
   "name": "placement-two-app",
+  "homepage": "https://priyank003.github.io/nemetiX_Web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +14,7 @@
     "cloudinary-react": "^1.7.0",
     "firebase": "^9.1.0",
     "firebase-tools": "^9.18.0",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-calendar": "^3.4.0",
     "react-chartjs-2": "^3.0.5",
@@ -26,6 +28,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
