@@ -68,10 +68,7 @@ const CreatePost = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(enteredTitleIsValid && enteredEditorIsValid);
-    if (enteredTitle && enteredEditor) {
-      addPostHandler(notice);
-    }
-
+    addPostHandler(notice);
     console.log(enteredTitle, enteredCompany, enteredEditor);
   };
 
@@ -186,7 +183,6 @@ const CreatePost = (props) => {
               onClick={submitHandler}
               className={classes["post-btn"]}
               // disabled={!formIsValid}
-              disabled={true}
             >
               Post
             </button>
