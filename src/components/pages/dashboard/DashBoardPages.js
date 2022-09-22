@@ -6,7 +6,7 @@ import Companies from "./Companies";
 import { Switch, Route } from "react-router-dom";
 const DashBoardPages = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <React.Fragment>
       <Switch>
         <Route path="/dashboard/account">
           <Account />
@@ -21,7 +21,7 @@ const DashBoardPages = () => {
           <DashBoardPosts />
         </Route>
       </Switch>
-    </div>
+      </React.Fragment>
   );
 };
 

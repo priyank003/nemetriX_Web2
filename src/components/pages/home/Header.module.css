@@ -1,5 +1,7 @@
 @import "../../UI/constant/vars.css";
 .header {
+  margin: auto;
+  width: 85%;
   /* border: 1px solid red; */
   margin-top: 10px;
   font-family: var(--font-primary);

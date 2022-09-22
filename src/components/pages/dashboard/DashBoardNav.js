@@ -9,31 +9,11 @@ import { authActions } from "../../store/auth-slice";
 import { sideNavActions } from "../../store/sideNav-slice";
 import { Fragment } from "react";
 import { useState, useEffect } from "react";
-const DashBoardNav = () => {
-  function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height,
-    };
-  }
-
-  function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(
-      getWindowDimensions()
-    );
-
-    useEffect(() => {
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
-
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    return windowDimensions;
-  }
+import { IconButton } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import useWindowDimensions from "../../../hooks/use-windowSize";
+const DashBoardNav = ({ onDrawerOpen, onDrawerClose, open }) => {
   const { width } = useWindowDimensions();
   const dispatch = useDispatch();
   //logout redux
@@ -46,16 +26,29 @@ const DashBoardNav = () => {
   const showSideNav = useSelector((state) => state.sideNav.show);
 
   const hideSideNavHandler = () => {
-    width < 460 && dispatch(sideNavActions.hideSideNav());
+    // width < 460 && dispatch(sideNavActions.hideSideNav());
   };
+  const handleDrawerOpen = () => {
+    onDrawerOpen();
+  };
+
+  const handleDrawerClose = () => {
+    onDrawerClose();
+  };
+
   return (
-    <Fragment>
-      {showSideNav && (
+ 
+     
         <div className={classes.dashBoardNav}>
           <div className={classes["nav-top"]}>
             <div className={classes["dashboard-nav-header"]}>
               <img src={AIT} alt="" />
               <h1>Placement cell</h1>
+              {width < 1200 && (
+                <IconButton onClick={handleDrawerClose}>
+                  <ChevronLeftIcon />
+                </IconButton>
+              )}
             </div>
             <div className={classes["dashboard-nav-links"]}>
               <NavLink
@@ -111,8 +104,8 @@ const DashBoardNav = () => {
             </div>
           </div>
         </div>
-      )}
-    </Fragment>
+      
+ 
   );
 };
 export default DashBoardNav;

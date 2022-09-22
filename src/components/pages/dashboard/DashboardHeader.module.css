@@ -1,19 +1,24 @@
 .dashboard-main-header {
+ 
   display: flex;
   flex-direction: column;
-  width: 90%;
-
+width: 100%;
   margin: 1rem;
   margin-bottom: 0;
 }
 .header-top {
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .dashboard-search {
+  padding: 0 5px;
+  flex-grow: 1;
   display: flex;
   align-items: center;
+
 }
 .dashboard-search span {
   font-size: 1.4rem;
@@ -22,14 +27,14 @@
 }
 
 .search-input {
-  margin-top: 1rem;
-
+  flex: 1;
   margin-left: 30px;
   display: flex;
   height: fit-content;
 }
 
 .search-input input {
+  width: 100%;
   border: 1px solid black;
   border: none;
   height: 40px;
@@ -56,16 +61,22 @@
 }
 
 .dashboard-user {
+  padding: 0 5px;
   display: flex;
-  justify-content: space-evenly;
-  width: 35%;
+  justify-content:space-evenly;
+  min-width: 40%;
+ flex: 1;
+  align-items: center;
 }
 .user-date {
   background: white;
-  padding: 10px;
+
   display: flex;
   align-items: center;
   border-radius: 15px;
+  padding: 0 10px;
+  height: 40px;
+
 }
 .user-date span {
   margin-left: 10px;
@@ -82,13 +93,20 @@
 .user-notifications img {
   width: 20px;
 }
-.user-profile {
+.user-bar{
   display: flex;
-  justify-content: center;
+  min-width: 100px;
+  justify-content: space-between;
+}
+.user-profile {
+ 
+ 
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .user-profile img {
-  width: 50px;
+  width: 40px;
   border-radius: 50%;
 }
 .user-notifications span {
@@ -151,9 +169,11 @@
   font-size: 0.8rem;
 }
 
-@media (max-width: 460px) {
+@media (max-width: 800px) {
   .user-date {
     display: none;
+  }
+  .header-bottom {
   }
   .header-bottom .search-input {
     width: 100%;
@@ -166,9 +186,7 @@
     flex: 1;
   }
   .dashboard-user {
-    flex: 0.4;
-    width: fit-content;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
   .dashboard-ham-menu {
     display: flex;

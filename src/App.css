@@ -1,7 +1,8 @@
 @import "./components/UI/constant/vars.css";
 .App {
-  width: 85%;
+  
   margin: auto;
+
 }
 
 .App-logo {
@@ -38,18 +39,18 @@
     transform: rotate(360deg);
   }
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 15px;
 }
 ::-webkit-scrollbar-track {
-  /* background: rgb(235, 226, 226); */
+ 
   background: rgb(224, 223, 223);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary);
   border-radius: 10px;
-}
+} */
 
 @media (max-width: 460px) {
   .App {

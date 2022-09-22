@@ -10,6 +10,7 @@ import DashBoard from "./components/pages/dashboard/DashBoard";
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/pages/home/Footer";
 import Highlights from "./components/pages/home/Highlights";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useState, useEffect } from "react";
 function App() {
@@ -62,11 +63,12 @@ function App() {
             <Landing />
 
             <Highlights />
+            <Footer/>
             {width < 460 ? <Footer /> : ""}
           </Route>
         </Switch>
       </div>
-      {width < 460 ? "" : <Footer />}
+     
     </div>
   );
 }

@@ -1,5 +1,7 @@
 @import "../../UI/constant/vars.css";
 .landing {
+  margin: auto;
+  width: 85%;
   position: relative;
   /* border: 1px solid red; */
   font-family: var(--font-primary);

@@ -3,7 +3,7 @@ import classes from "./DashboardHeader.module.css";
 import search from "../../../assets/logos/search_black_24dp.svg";
 import calendarIcon from "../../../assets/logos/today_black_24dp.svg";
 import bellIcon from "../../../assets/logos/bell.png";
-import userImg from "../../../assets/images/user/cheerful-curly-business-girl-wearing-glasses.jpg";
+
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import hamMenu from "../../../assets/logos/menu_black_24dp.svg";
@@ -11,44 +11,45 @@ import createPost from "../../../assets/logos/add_circle_black_24dp.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { sideNavActions } from "../../store/sideNav-slice";
 import CreatePost from "./admin/CreatePost";
+import { IconButton } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { styled } from "@mui/material/styles";
+import Badge from "@mui/material/Badge";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import useWindowDimensions from "../../../hooks/use-windowSize";
+import Tooltip from '@mui/material/Tooltip';
+import MenuIcon from "@mui/icons-material/Menu";
+import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import Divider from '@mui/material/Divider';
+import PersonAdd from '@mui/icons-material/PersonAdd';
+import Settings from '@mui/icons-material/Settings';
+import Logout from '@mui/icons-material/Logout';
+import AccountMenu from "./AccountMenu";
 
-const DashboardHeader = () => {
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    border: `2px solid #b7eeb5 `,
+    padding: "0 4px",
+    backgroundColor: "#b7eeb5",
+    color: "black",
+    fontWeight: "600",
+  },
+}));
+
+const DashboardHeader = ({ onDrawerOpen, onDrawerClose, open }) => {
+  const handleDrawerOpen = () => {
+    onDrawerOpen();
+  };
+
+  const handleDrawerClose = () => {
+    onDrawerClose();
+  };
   //getting browser size
 
-  function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height,
-    };
-  }
-
-  function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(
-      getWindowDimensions()
-    );
-
-    useEffect(() => {
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
-
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    return windowDimensions;
-  }
   const { width } = useWindowDimensions();
-
-  const [searchBottom, setSearchBottom] = useState(false);
-
-  useEffect(() => {
-    setSearchBottom(() => {
-      return width < 460 ? true : false;
-    });
-  }, [width]);
-
   //show side nav
   const dispatch = useDispatch();
 
@@ -79,16 +80,42 @@ const DashboardHeader = () => {
     setShowCreatePost((prev) => !prev);
   };
 
+  const date = new Date();
+  const formattedDate = date
+    .toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    })
+    .replace(/ /g, "-");
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+   
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
   return (
     <div className={classes["dashboard-main-header"]}>
       <div className={classes["header-top"]}>
         <div className={classes["dashboard-search"]}>
-          <div className={classes["dashboard-ham-menu"]}>
-            <img src={hamMenu} alt="hammenu" onClick={hamMenuHandler} />
-          </div>
+          {width < 1200 && (
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 2, ...(open && { display: "none" }) }}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
           <span>Dashboard</span>
 
-          {!searchBottom && (
+          {width > 800 && (
             <div className={classes["search-input"]}>
               <input type="text" placeholder="Search Jobs" />
               <div className={classes["search-icon"]}>
@@ -126,22 +153,28 @@ const DashboardHeader = () => {
           <div className={classes["user-date"]}>
             {" "}
             <img src={calendarIcon} alt="" />
-            <span> 24 sept, 2021</span>
+            <span>{formattedDate}</span>
           </div>
+          <div className={classes["user-bar"]}>
+          <IconButton aria-label="cart">
+              <StyledBadge badgeContent={4} color="secondary">
+                <NotificationsIcon />
+              </StyledBadge>
+            </IconButton>
+          {/* <div className={classes["user-profile"]}>
+        
 
-          <div className={classes["user-notifications"]}>
-            <img src={bellIcon} alt="" />
-            <span> 3 </span>
-          </div>
-          <div className={classes["user-profile"]}>
             <Link to="/dashboard/account">
               <img src={userImg} alt="" />
             </Link>
+          </div> */}
+          <AccountMenu/>
+      
           </div>
         </div>
       </div>
       <div className={classes["header-bottom"]}>
-        {searchBottom && (
+        {width < 800 && (
           <div className={classes["search-input"]}>
             <input type="text" placeholder="Search Jobs" />
             <div className={classes["search-icon"]}>

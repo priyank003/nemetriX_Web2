@@ -2,9 +2,12 @@
   background: white;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  justify-content: space-between;
+
+  height: 100%;
   align-items: center;
   padding-top: 20px;
+ 
 }
 @import url("https://fonts.googleapis.com/css2?family=Glory&family=Josefin+Sans&display=swap");
 
@@ -12,6 +15,7 @@
   font-family: "Josefin Sans", sans-serif;
   color: var(--color-primary-font);
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
 }
 .dashboard-nav-header img {
@@ -57,7 +61,13 @@
   flex: 1;
 }
 .nav-bottom {
-  margin-top: 4rem;
+  padding-bottom: 2rem;
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+
+  /* margin-top: 4rem; */
 }
 .dashboard-nav-img img {
   width: 200px;
@@ -78,7 +88,7 @@
 .dashboard-nav-links a {
   text-decoration: none;
 }
-@media (max-width: 460px) {
+/* @media (max-width: 460px) {
   .dashBoardNav {
     position: fixed;
     top: 0;
@@ -97,4 +107,4 @@
       left: 0;
     }
   }
-}
+} */

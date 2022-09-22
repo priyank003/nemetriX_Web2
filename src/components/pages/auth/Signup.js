@@ -17,7 +17,7 @@ const Signup = (props) => {
 
   const {
     value: enteredEmail,
-    // isValid: enteredEmailIsValid,
+    isValid: enteredEmailIsValid,
     hasEror: emailInputHasEror,
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
@@ -26,24 +26,24 @@ const Signup = (props) => {
 
   const {
     value: enteredId,
-    // isValid: enteredIdIsValid,
+    isValid: enteredIdIsValid,
     hasEror: idInputHasEror,
     valueChangeHandler: idChangeHandler,
     inputBlurHandler: idBlurHandler,
     // reset: resetIdInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => typeof value === Number);
   const {
     value: enteredlastName,
-    // isValid: enteredNameIsValid,
-    // hasEror: nameInputHasEror,
+    isValid: enteredLastNameIsValid,
+    hasEror: lastNameInputHasEror,
     valueChangeHandler: lastNameChangeHandler,
     inputBlurHandler: lastNameBlurHandler, // eslint-disable-next-line
     reset: resetLastNameInput,
   } = useInput((value) => value.trim() !== "");
   const {
     value: enteredYear,
-    // isValid: enteredYearIsValid,
-    // hasEror: YearInputHasEror,
+    isValid: enteredYearIsValid,
+    hasEror: YearInputHasEror,
     valueChangeHandler: yearChangeHandler,
     inputBlurHandler: yearBlurHandler, // eslint-disable-next-line
     reset: resetYearInput,
@@ -65,9 +65,27 @@ const Signup = (props) => {
     inputBlurHandler: passwordBlurHandler, // eslint-disable-next-line
     reset: resetPasswordInput,
   } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredConfirmPassword, // eslint-disable-next-line
+    isValid: enteredConfirmPasswordIsValid, // eslint-disable-next-line
+    hasEror: confirmPasswordInputHasEror,
+    valueChangeHandler: confirmPasswordChangeHandler,
+    inputBlurHandler: confirmPasswordBlurHandler, // eslint-disable-next-line
+    reset: resetConfirmPasswordInput,
+  } = useInput((value) => value.trim() === enteredPassword);
   let formIsValid = false;
 
-  if (enteredNameIsValid) {
+  if (
+    enteredNameIsValid &&
+    enteredLastNameIsValid &&
+    enteredEmailIsValid &&
+    enteredIdIsValid &&
+    enteredYearIsValid &&
+    enteredBranchIsValid &&
+    enteredPasswordIsValid &&
+    enteredConfirmPasswordIsValid
+  ) {
     // eslint-disable-next-line
     formIsValid = true;
   }
@@ -121,105 +139,154 @@ const Signup = (props) => {
             </h1>
             <div className={classes["form-input"]}>
               <div className={classes["input-name"]}>
-                <input
-                  type="text"
-                  placeholder="first name"
-                  onChange={nameChangeHandler}
-                  value={enteredName}
-                  className={
-                    classes[`${nameInputHasEror ? "input-invalid" : ""}`]
-                  }
-                  onBlur={nameBlurHandler}
-                />
-                <input
-                  type="text"
-                  placeholder="last name"
-                  onChange={lastNameChangeHandler}
-                  value={enteredlastName}
-                  onBlur={lastNameBlurHandler}
-                />
+                <div className={`${classes["input_field"]}`}>
+                  <input
+                    type="text"
+                    placeholder="first name"
+                    onChange={nameChangeHandler}
+                    value={enteredName}
+                    className={
+                      classes[`${nameInputHasEror ? "input-invalid" : ""}`]
+                    }
+                    onBlur={nameBlurHandler}
+                  />
+                  {nameInputHasEror && (
+                    <p className={classes["eror-text"]}>
+                      Name must not be empty
+                    </p>
+                  )}
+                </div>
+                <div className={classes["input_field"]}>
+                  <input
+                    type="text"
+                    placeholder="last name"
+                    onChange={lastNameChangeHandler}
+                    value={enteredlastName}
+                    onBlur={lastNameBlurHandler}
+                    className={
+                      classes[`${lastNameInputHasEror ? "input-invalid" : ""}`]
+                    }
+                  />
+                  {lastNameInputHasEror && (
+                    <p className={classes["eror-text"]}>
+                      last Name must not be empty
+                    </p>
+                  )}
+                </div>
               </div>
-              {nameInputHasEror && (
-                <p className={classes["eror-text"]}>Name must not be empty</p>
-              )}
-              <div className={classes["input-cedentials"]}>
-                <input
-                  type="email"
-                  placeholder="AIT email"
-                  onChange={emailChangeHandler}
-                  value={enteredEmail}
-                  className={
-                    classes[`${emailInputHasEror ? "input-invalid" : ""}`]
-                  }
-                  onBlur={emailBlurHandler}
-                />
 
-                <input
-                  type="text"
-                  placeholder="Registered id"
-                  onChange={idChangeHandler}
-                  value={enteredId}
-                  className={
-                    classes[`${idInputHasEror ? "input-invalid" : ""}`]
-                  }
-                  onBlur={idBlurHandler}
-                />
+              <div className={classes["input-cedentials"]}>
+                <div className={`${classes["input_field"]}`}>
+                  <input
+                    type="email"
+                    placeholder="AIT email"
+                    onChange={emailChangeHandler}
+                    value={enteredEmail}
+                    className={
+                      classes[`${emailInputHasEror ? "input-invalid" : ""}`]
+                    }
+                    onBlur={emailBlurHandler}
+                  />
+                  {emailInputHasEror && (
+                    <p className={classes["eror-text"]}>email must include @</p>
+                  )}
+                </div>
+                <div className={`${classes["input_field"]}`}>
+                  <input
+                    type="text"
+                    placeholder="Registered id"
+                    onChange={idChangeHandler}
+                    value={enteredId}
+                    className={
+                      classes[`${idInputHasEror ? "input-invalid" : ""}`]
+                    }
+                    onBlur={idBlurHandler}
+                  />
+                  {idInputHasEror && (
+                    <p className={classes["eror-text"]}>id must be number</p>
+                  )}
+                </div>
               </div>
-              {emailInputHasEror && (
-                <p className={classes["eror-text"]}>email must include @</p>
-              )}
-              {idInputHasEror && (
-                <p className={classes["eror-text"]}>id must not be empty</p>
-              )}
 
               <div className={classes["input-study"]}>
-                <label htmlFor="">
-                  <span>Year</span>
-                  <select
-                    name="year"
-                    id="year-select"
-                    onChange={yearChangeHandler}
-                    value={enteredYear}
-                    onBlur={yearBlurHandler}
-                  >
-                    <option value="">Select</option>
-                    <option value="third">TE</option>
-                    <option value="fourth">BE</option>
-                    <option value="ME">ME 2nd year</option>
-                  </select>
-                </label>
+                <div className={`${classes["input_field"]}`}>
+                  <label htmlFor="">
+                    <span>Year</span>
+                    <select
+                      name="year"
+                      id="year-select"
+                      onChange={yearChangeHandler}
+                      value={enteredYear}
+                      onBlur={yearBlurHandler}
+                    >
+                      <option value="">Select</option>
+                      <option value="third">TE</option>
+                      <option value="fourth">BE</option>
+                      <option value="ME">ME 2nd year</option>
+                    </select>
+                  </label>
+                  {YearInputHasEror && (
+                    <p className={classes["eror-text"]}>select year</p>
+                  )}
+                </div>
+                <div className={`${classes["input_field"]}`}>
+                  <label htmlFor="">
+                    <span>Branch</span>
 
-                <label htmlFor="">
-                  <span>Branch</span>
-
-                  <select
-                    name="branch"
-                    id="branch-select"
-                    onChange={branchChangeHandler}
-                    value={enteredbranch}
-                    onBlur={branchBlurHandler}
-                  >
-                    <option value="">Select</option>
-                    <option value="comp">Computer Engeering</option>
-                    <option value="it">Information Technology</option>
-                    <option value="entc">Electronics</option>
-                    <option value="meach">Mechanical engineering</option>
-                  </select>
-                </label>
+                    <select
+                      name="branch"
+                      id="branch-select"
+                      onChange={branchChangeHandler}
+                      value={enteredbranch}
+                      onBlur={branchBlurHandler}
+                    >
+                      <option value="">Select</option>
+                      <option value="comp">Computer Engeering</option>
+                      <option value="it">Information Technology</option>
+                      <option value="entc">Electronics</option>
+                      <option value="meach">Mechanical engineering</option>
+                    </select>
+                  </label>
+                  {branchInputHasEror && (
+                    <p className={classes["eror-text"]}>select branch</p>
+                  )}
+                </div>
               </div>
               <div className={classes["input-password"]}>
-                <input
-                  type="password"
-                  placeholder="set password"
-                  onChange={passwordChangeHandler}
-                  value={enteredPassword}
-                  onBlur={passwordBlurHandler}
-                />
-                <input type="password" placeholder="confirm passwword" />
+                <div className={`col-12 ${classes["input_field"]}`}>
+                  <input
+                    type="password"
+                    placeholder="set password"
+                    onChange={passwordChangeHandler}
+                    value={enteredPassword}
+                    onBlur={passwordBlurHandler}
+                  />
+                  {passwordInputHasEror && (
+                    <p className={classes["eror-text"]}>
+                      password must not be empty
+                    </p>
+                  )}
+                </div>
+                <div className={`col-12 ${classes["input_field"]}`}>
+                  <input
+                    type="password"
+                    placeholder="confirm passwword"
+                    onChange={confirmPasswordChangeHandler}
+                    value={enteredConfirmPassword}
+                    onBlur={confirmPasswordBlurHandler}
+                  />
+                  {confirmPasswordInputHasEror && (
+                    <p className={classes["eror-text"]}>
+                      password must be must be same as above
+                    </p>
+                  )}
+                </div>
               </div>
               <Link to="/login">
                 <div className={classes["form-submit"]}>
-                  <button onClick={updatePost}>Sign-up</button>
+                  <button onClick={updatePost} disabled={!formIsValid}>
+                    Sign-up
+                  </button>
                 </div>
               </Link>
             </div>

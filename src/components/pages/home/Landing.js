@@ -13,6 +13,8 @@ import microsoft from "../../../assets/logos/Microsoft-Logo-PNG-Transparent.png"
 import amazon from "../../../assets/logos/Amazon_(company)-Logo.wine.svg";
 import accenture from "../../../assets/logos/Accenture-logo.png";
 import deutsche from "../../../assets/logos/399-3994348_deutsche-bank-logo-png-transparent-png.png";
+import Footer from "./Footer";
+
 const Landing = () => {
   return (
     <div className={classes.landing}>
@@ -83,6 +85,8 @@ const Landing = () => {
           </div>
         </div>
       </div>
+
+     
     </div>
   );
 };

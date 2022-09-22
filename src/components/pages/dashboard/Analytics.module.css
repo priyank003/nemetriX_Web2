@@ -1,12 +1,14 @@
 @import "../../UI/constant/vars.css";
 .analytics {
+  width: 100%;
   border-radius: 25px;
-  height: 550px;
+ height: 85%;
   overflow: auto;
   padding-right: 25px;
 }
 .analytics-container div {
-  margin-bottom: 2rem;
+  margin-top: 10px;
+
   background: white;
 
   padding: 25px;
@@ -19,9 +21,9 @@
   margin-top: 0;
 }
 
-@media (max-width: 460px) {
+@media (max-width: 800px) {
   .analytics {
-    height: fit-content;
+    height: 78%;
     padding: 0;
   }
   .analytics-container div {
