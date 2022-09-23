@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/nemetriX_Web2/static/css/main.c57b6a4a.chunk.css",
-    "main.js": "/nemetriX_Web2/static/js/main.1891247a.chunk.js",
-    "main.js.map": "/nemetriX_Web2/static/js/main.1891247a.chunk.js.map",
+    "main.js": "/nemetriX_Web2/static/js/main.4b37f303.chunk.js",
+    "main.js.map": "/nemetriX_Web2/static/js/main.4b37f303.chunk.js.map",
     "runtime-main.js": "/nemetriX_Web2/static/js/runtime-main.d1d2d59a.js",
     "runtime-main.js.map": "/nemetriX_Web2/static/js/runtime-main.d1d2d59a.js.map",
     "static/css/2.b61650dd.chunk.css": "/nemetriX_Web2/static/css/2.b61650dd.chunk.css",
-    "static/js/2.5d4102bd.chunk.js": "/nemetriX_Web2/static/js/2.5d4102bd.chunk.js",
-    "static/js/2.5d4102bd.chunk.js.map": "/nemetriX_Web2/static/js/2.5d4102bd.chunk.js.map",
+    "static/js/2.5feec7a0.chunk.js": "/nemetriX_Web2/static/js/2.5feec7a0.chunk.js",
+    "static/js/2.5feec7a0.chunk.js.map": "/nemetriX_Web2/static/js/2.5feec7a0.chunk.js.map",
     "static/js/3.cb304bfe.chunk.js": "/nemetriX_Web2/static/js/3.cb304bfe.chunk.js",
     "static/js/3.cb304bfe.chunk.js.map": "/nemetriX_Web2/static/js/3.cb304bfe.chunk.js.map",
     "index.html": "/nemetriX_Web2/index.html",
     "static/css/2.b61650dd.chunk.css.map": "/nemetriX_Web2/static/css/2.b61650dd.chunk.css.map",
     "static/css/main.c57b6a4a.chunk.css.map": "/nemetriX_Web2/static/css/main.c57b6a4a.chunk.css.map",
-    "static/js/2.5d4102bd.chunk.js.LICENSE.txt": "/nemetriX_Web2/static/js/2.5d4102bd.chunk.js.LICENSE.txt",
+    "static/js/2.5feec7a0.chunk.js.LICENSE.txt": "/nemetriX_Web2/static/js/2.5feec7a0.chunk.js.LICENSE.txt",
     "static/media/399-3994348_deutsche-bank-logo-png-transparent-png.69b382c7.png": "/nemetriX_Web2/static/media/399-3994348_deutsche-bank-logo-png-transparent-png.69b382c7.png",
     "static/media/580b57fcd9996e24bc43c51f.d7548f55.png": "/nemetriX_Web2/static/media/580b57fcd9996e24bc43c51f.d7548f55.png",
     "static/media/AIT black logo.8b2aa3a4.png": "/nemetriX_Web2/static/media/AIT black logo.8b2aa3a4.png",
@@ -45,8 +45,8 @@
   "entrypoints": [
     "static/js/runtime-main.d1d2d59a.js",
     "static/css/2.b61650dd.chunk.css",
-    "static/js/2.5d4102bd.chunk.js",
+    "static/js/2.5feec7a0.chunk.js",
     "static/css/main.c57b6a4a.chunk.css",
-    "static/js/main.1891247a.chunk.js"
+    "static/js/main.4b37f303.chunk.js"
   ]
 }
