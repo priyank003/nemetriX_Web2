@@ -11,6 +11,7 @@ const Account = () => {
   return (
     <div className={classes.account}>
       <div className={classes["account-container"]}>
+       
         <div className={classes["account-header"]}>
           <div className={classes["user-img"]}>
             <img src={userImg} alt="userimg" />
@@ -38,6 +39,7 @@ const Account = () => {
             </div>
           </div>
         </div>
+      
         <div className={classes["account-adverstisement"]}>
           <div className={classes["adv-heading"]}>
             <h1>For AIT exclusive interview experience</h1>

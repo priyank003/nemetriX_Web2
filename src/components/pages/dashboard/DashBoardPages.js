@@ -4,6 +4,7 @@ import Analytics from "./Analytics";
 import DashBoardPosts from "./DashBoardPosts";
 import Companies from "./Companies";
 import { Switch, Route } from "react-router-dom";
+import BasicTable from "./BasicTable";
 const DashBoardPages = () => {
   return (
     <React.Fragment>
@@ -15,7 +16,8 @@ const DashBoardPages = () => {
           <Analytics />
         </Route>
         <Route path="/dashboard/companies">
-          <Companies />
+          <BasicTable/>
+          {/* <Companies /> */}
         </Route>
         <Route path="/dashboard">
           <DashBoardPosts />

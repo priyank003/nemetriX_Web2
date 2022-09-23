@@ -2,28 +2,51 @@
 .analytics {
   width: 100%;
   border-radius: 25px;
- height: 85%;
-  overflow: auto;
-  padding-right: 25px;
+  height: 80%;
+  /* overflow-y: auto; */
+/*  
+  padding-right: 25px; */
+  padding: 10px 0;
+  padding-top: 0;
+}
+.analytics-container{
+  display: flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  padding: 0 10px;
 }
 .analytics-container div {
-  margin-top: 10px;
+ 
+}
+.analytics-container h1 {
+  font-size: 1.2rem;
+  color: var(--color-primary-font);
+  margin-top: 0;
+}
+.analytics-composition{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
 
+}
+.analytics-chart{
+  
+}
+.analytics-chart-wrapper{
+ 
+  flex:1;
   background: white;
-
+  margin: 10px;
   padding: 25px;
   border-radius: 25px;
   padding-bottom: 10px;
-}
-.analytics-container div h1 {
-  font-size: 1.5rem;
-  color: var(--color-primary-font);
   margin-top: 0;
+
 }
 
 @media (max-width: 800px) {
   .analytics {
-    height: 78%;
+    
     padding: 0;
   }
   .analytics-container div {

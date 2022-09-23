@@ -9,24 +9,26 @@ const Analytics = () => {
   return (
     <div className={classes.analytics}>
       <div className={classes["analytics-container"]}>
-        <div className={classes["analytics-packages"]}>
+        <div className={classes["analytics-chart-wrapper"]}>
           <h1>Placement packages</h1>
-          <Bar data={Salary.data} options={Salary.options} />
+          <Bar  responsive={true} data={Salary.data} options={Salary.options} className={classes["analytics-chart"]} />
         </div>
-        <div className={classes["analytics-percentage"]}>
+        <div className={classes["analytics-chart-wrapper"]}>
           <h1>Placement percentage</h1>
-          <Line data={Percentage.data} options={Percentage.options} />
+          <Line  responsive={true} data={Percentage.data} options={Percentage.options} className={classes["analytics-chart"]}/>
         </div>
-        <div className={classes["analytics-companies"]}>
+        <div className={classes["analytics-chart-wrapper"]}>
           <h1>No of companies visited</h1>
-          <Line data={Companies.data} options={Companies.options} />
+          <Line  responsive={true} data={Companies.data} options={Companies.options} className={classes["analytics-chart"]} />
         </div>
-        <div className={classes["analytics-composition"]}>
+        <div className={classes["analytics-chart-wrapper"]}>
           <h1>Package Compostion</h1>
           <Doughnut
+            responsive={true}
             data={Composition.data}
             options={Composition.options}
             config={Composition.config}
+            className={classes["analytics-chart"]}
           />
         </div>
       </div>
